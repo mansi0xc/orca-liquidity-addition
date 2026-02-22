@@ -1,0 +1,405 @@
+$  npx ts-node scripts/prod-add-liquidity-and-mint-bond.ts 2>&1
+
+══════════════════════════════════════════════════════════════════════
+LP BONDS PROTOCOL - ADD LIQUIDITY AND MINT BOND
+══════════════════════════════════════════════════════════════════════
+Network: Devnet
+Debug Mode: true
+Timestamp: 2026-02-21T19:18:03.215Z
+
+─── Setting Up Connection ───
+Connection URL: https://api.devnet.solana.com
+User Public Key: FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+User SOL Balance: 6.919081 SOL
+Program ID (from IDL): AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w
+
+─── Validating Program Constants ───
+Program ID: AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w
+Whirlpool Program ID: ✓ whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc
+Token Mint A (wSOL): ✓ So11111111111111111111111111111111111111112
+Token Mint B: ✓ 4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2
+Tick Bounds: ✓ -443636 to 443636
+
+─── Fetching Whirlpool Data ───
+
+─── Validating Whirlpool Data ───
+Token A Match: ✓
+Token B Match: ✓
+Tick Spacing: ✓ 128
+Whirlpool Address: 8gbgyrnZJKiiUT29SJJ3VeJ7x7zHy11exABgD3omwVmN
+Token Vault A: 4E34XMs7rHQWsgavf9gHYzr9nSHnQM6vtbj9joNSNKDg
+Token Vault B: 2Pj7bSBJS47fjxRYNhTSMuQyYDon5Drr4GFioo9HqA8y
+Tick Spacing: 128
+Current Tick: 69082
+Liquidity: 31624347484
+Sqrt Price: 583366240222200398950
+
+─── Deriving PDAs ───
+✓ Protocol already initialized
+Generated Bond Mint: EMi9tbQ7ppiUsgPL1ioQxKb3v3iCJa8pfNCCnJ8fjGHF
+Generated Position Mint: BYTQMdXqdz8GUYBkGZ98z2pE38uxmtfWdKi4BPZHF44f
+Generated wSOL Account: FsBsYe2D4PcZer3MzEBGPx1FNqVnTJ6yRHSsjYTkiZ6v
+
+─── Calculating Tick Range ───
+Current Tick: 69082
+Tick Spacing: 128
+Tick Lower: 67712
+Tick Upper: 70400
+
+─── Validating Tick Range ───
+Tick Bounds: ✓
+Tick Order: ✓
+Tick Alignment: ✓
+Tick Array Lower: 7ZHbNczxoMPw6CGBWzi33gDYXhvRtXXKL6zLAxZTpDyb
+Tick Array Upper: 7ZHbNczxoMPw6CGBWzi33gDYXhvRtXXKL6zLAxZTpDyb
+✓ Both tick arrays exist
+
+─── Deriving Token Accounts ───
+
+Ensuring Token B ATA exists...
+✓ Token B ATA: EpsRoUcNSbUkwVVY5y5YquU4k5nfU5JivbypypndyXaA
+  Balance: 18446724073709551615
+
+─── Validating PDA Derivations ───
+Config PDA:
+  Address: 458we97Eh6ESEvEsfwBBSSRwLhtptjvr8mhrZYsrtd4W
+  Bump: 254
+Bond Authority PDA:
+  Address: hitpB76esmaXFSUUP92iGcsL3rwhjy8VLLcBGxj7ZyN
+  Bump: 255
+Position Custody PDA:
+  Address: 9cFTJBKq4tvr5FRSgR6B8t4M7TXJ4ruXyLuBf9N3cJmx
+  Bump: 255
+Whirlpool Position PDA:
+  Address: 5CqXCNxiryTB33HdsdhFSNN5ZXpUVDEZdcrncVfAPknz
+  Bump: 254
+Tick Array Lower PDA:
+  Address: 7ZHbNczxoMPw6CGBWzi33gDYXhvRtXXKL6zLAxZTpDyb
+Tick Array Upper PDA:
+  Address: 7ZHbNczxoMPw6CGBWzi33gDYXhvRtXXKL6zLAxZTpDyb
+Position Token Account (User ATA):
+  Address: BM2C62U31s5xYekdmqh4spai4uarmvtzkpHrvcGGyyiw
+Custody Position Token Account (Custody ATA):
+  Address: 4drPNiNNBcNTWSsij51Yg1QZyqhBgG1riqgRbViJ6MiN
+User Bond Account:
+  Address: DGv5i32WXigBhruedpCwEjaGrAmkkmagwNiWa41VtrhP
+User Token B Account:
+  Address: EpsRoUcNSbUkwVVY5y5YquU4k5nfU5JivbypypndyXaA
+
+─── Calculating Liquidity ───
+[DEBUG] Liquidity Calculation:
+{
+  "sqrtPriceLower": "544745445583857060000",
+  "sqrtPriceUpper": "623103037075042300000",
+  "sqrtPriceCurrent": "583366240222200398950",
+  "liquidityAmount": "2479468449",
+  "expectedAmountA": "4999999",
+  "expectedAmountB": "5191108056",
+  "tokenMaxA": "6009998",
+  "tokenMaxB": "6229339667",
+  "positionType": "TWO_SIDED"
+}
+Position Type: TWO_SIDED
+Desired SOL: 5000000 lamports
+Liquidity Amount: 2479468449
+Expected Amount A: 4999999 lamports
+Expected Amount B: 5191108056 tokens
+Token Max A: 6009998 lamports
+Token Max B: 6229339667 tokens
+
+─── All Transaction Accounts ───
+
+Accounts (in instruction order):
+  1. user:
+     Address: FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+     Signer: true, Writable: true
+  2. wsol_mint:
+     Address: So11111111111111111111111111111111111111112
+     Signer: false, Writable: false
+  3. token_mint_b:
+     Address: 4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2
+     Signer: false, Writable: false
+  4. bond_authority:
+     Address: hitpB76esmaXFSUUP92iGcsL3rwhjy8VLLcBGxj7ZyN
+     Signer: false, Writable: false
+  5. bond_mint:
+     Address: EMi9tbQ7ppiUsgPL1ioQxKb3v3iCJa8pfNCCnJ8fjGHF
+     Signer: true, Writable: true
+  6. user_wsol_account:
+     Address: FsBsYe2D4PcZer3MzEBGPx1FNqVnTJ6yRHSsjYTkiZ6v
+     Signer: true, Writable: true
+  7. user_token_b_account:
+     Address: EpsRoUcNSbUkwVVY5y5YquU4k5nfU5JivbypypndyXaA
+     Signer: false, Writable: true
+  8. user_bond_account:
+     Address: DGv5i32WXigBhruedpCwEjaGrAmkkmagwNiWa41VtrhP
+     Signer: false, Writable: true
+  9. config:
+     Address: 458we97Eh6ESEvEsfwBBSSRwLhtptjvr8mhrZYsrtd4W
+     Signer: false, Writable: true
+  10. position_custody:
+     Address: 9cFTJBKq4tvr5FRSgR6B8t4M7TXJ4ruXyLuBf9N3cJmx
+     Signer: false, Writable: true
+  11. position_mint:
+     Address: BYTQMdXqdz8GUYBkGZ98z2pE38uxmtfWdKi4BPZHF44f
+     Signer: true, Writable: true
+  12. whirlpool_position:
+     Address: 5CqXCNxiryTB33HdsdhFSNN5ZXpUVDEZdcrncVfAPknz
+     Signer: false, Writable: true
+  13. position_token_account:
+     Address: BM2C62U31s5xYekdmqh4spai4uarmvtzkpHrvcGGyyiw
+     Signer: false, Writable: true
+  14. custody_position_token_account:
+     Address: 4drPNiNNBcNTWSsij51Yg1QZyqhBgG1riqgRbViJ6MiN
+     Signer: false, Writable: true
+  15. whirlpool:
+     Address: 8gbgyrnZJKiiUT29SJJ3VeJ7x7zHy11exABgD3omwVmN
+     Signer: false, Writable: true
+  16. token_vault_a:
+     Address: 4E34XMs7rHQWsgavf9gHYzr9nSHnQM6vtbj9joNSNKDg
+     Signer: false, Writable: true
+  17. token_vault_b:
+     Address: 2Pj7bSBJS47fjxRYNhTSMuQyYDon5Drr4GFioo9HqA8y
+     Signer: false, Writable: true
+  18. tick_array_lower:
+     Address: 7ZHbNczxoMPw6CGBWzi33gDYXhvRtXXKL6zLAxZTpDyb
+     Signer: false, Writable: true
+  19. tick_array_upper:
+     Address: 7ZHbNczxoMPw6CGBWzi33gDYXhvRtXXKL6zLAxZTpDyb
+     Signer: false, Writable: true
+  20. whirlpool_program:
+     Address: whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc
+     Signer: false, Writable: false
+  21. token_program:
+     Address: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+     Signer: false, Writable: false
+  22. associated_token_program:
+     Address: ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL
+     Signer: false, Writable: false
+  23. system_program:
+     Address: 11111111111111111111111111111111
+     Signer: false, Writable: false
+  24. rent:
+     Address: SysvarRent111111111111111111111111111111111
+     Signer: false, Writable: false
+
+Signers:
+  1. user: FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+  2. bond_mint: EMi9tbQ7ppiUsgPL1ioQxKb3v3iCJa8pfNCCnJ8fjGHF
+  3. position_mint: BYTQMdXqdz8GUYBkGZ98z2pE38uxmtfWdKi4BPZHF44f
+  4. user_wsol_account: FsBsYe2D4PcZer3MzEBGPx1FNqVnTJ6yRHSsjYTkiZ6v
+
+Instruction Arguments:
+  tick_lower_index: 67712
+  tick_upper_index: 70400
+  liquidity_amount: 2479468449
+  token_max_a: 6009998
+  token_max_b: 6229339667
+  sol_amount: 6009998
+
+─── Building Transaction ───
+
+Simulating transaction...
+
+─── Simulating Transaction ───
+✓ Simulation successful
+Simulation logs:
+  [0] Program ComputeBudget111111111111111111111111111111 invoke [1]
+  [1] Program ComputeBudget111111111111111111111111111111 success
+  [2] Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w invoke [1]
+  [3] Program log: Instruction: AddLiquidityAndMintBond
+  [4] Program 11111111111111111111111111111111 invoke [2]
+  [5] Program 11111111111111111111111111111111 success
+  [6] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]
+  [7] Program log: Instruction: InitializeMint2
+  [8] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 2828 of 587990 compute units
+  [9] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [10] Program 11111111111111111111111111111111 invoke [2]
+  [11] Program 11111111111111111111111111111111 success
+  [12] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]
+  [13] Program log: Instruction: InitializeAccount3
+  [14] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 3158 of 579892 compute units
+  [15] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [16] Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL invoke [2]
+  [17] Program log: Create
+  [18] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+  [19] Program log: Instruction: GetAccountDataSize
+  [20] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1622 of 565961 compute units
+  [21] Program return: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA pQAAAAAAAAA=
+  [22] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [23] Program 11111111111111111111111111111111 invoke [3]
+  [24] Program 11111111111111111111111111111111 success
+  [25] Program log: Initialize the associated token account
+  [26] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+  [27] Program log: Instruction: InitializeImmutableOwner
+  [28] Program log: Please upgrade to SPL Token 2022 for immutable owner support
+  [29] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1405 of 559429 compute units
+  [30] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [31] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+  [32] Program log: Instruction: InitializeAccount3
+  [33] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4241 of 555600 compute units
+  [34] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [35] Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 20228 of 571304 compute units
+  [36] Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL success
+  [37] Program 11111111111111111111111111111111 invoke [2]
+  [38] Program 11111111111111111111111111111111 success
+  [39] Program 11111111111111111111111111111111 invoke [2]
+  [40] Program 11111111111111111111111111111111 success
+  [41] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]
+  [42] Program log: Instruction: SyncNative
+  [43] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 3045 of 535072 compute units
+  [44] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [45] Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc invoke [2]
+  [46] Program log: Instruction: OpenPosition
+  [47] Program 11111111111111111111111111111111 invoke [3]
+  [48] Program 11111111111111111111111111111111 success
+  [49] Program 11111111111111111111111111111111 invoke [3]
+  [50] Program 11111111111111111111111111111111 success
+  [51] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+  [52] Program log: Instruction: InitializeMint2
+  [53] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 2780 of 510882 compute units
+  [54] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [55] Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL invoke [3]
+  [56] Program log: Create
+  [57] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [4]
+  [58] Program log: Instruction: GetAccountDataSize
+  [59] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1595 of 497183 compute units
+  [60] Program return: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA pQAAAAAAAAA=
+  [61] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [62] Program 11111111111111111111111111111111 invoke [4]
+  [63] Program 11111111111111111111111111111111 success
+  [64] Program log: Initialize the associated token account
+  [65] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [4]
+  [66] Program log: Instruction: InitializeImmutableOwner
+  [67] Program log: Please upgrade to SPL Token 2022 for immutable owner support
+  [68] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1405 of 490678 compute units
+  [69] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [70] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [4]
+  [71] Program log: Instruction: InitializeAccount3
+  [72] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4214 of 486849 compute units
+  [73] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [74] Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 20174 of 502526 compute units
+  [75] Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL success
+  [76] Program 11111111111111111111111111111111 invoke [3]
+  [77] Program 11111111111111111111111111111111 success
+  [78] Program data: 7a/z5pN1ZXlyJq7xhWu6Sm4j2H8Dy48ovH0laeAqS4TdGhO7SojhbT52/8G1tcoXTU3X9kVI/iAgbjDpHOpBAlle0k6ZOxu3gAgBAAATAQA=
+  [79] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+  [80] Program log: Instruction: MintTo
+  [81] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4575 of 475369 compute units
+  [82] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [83] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+  [84] Program log: Instruction: SetAuthority
+  [85] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 2994 of 468653 compute units
+  [86] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [87] Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc consumed 60329 of 524759 compute units
+  [88] Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc success
+  [89] Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL invoke [2]
+  [90] Program log: Create
+  [91] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+  [92] Program log: Instruction: GetAccountDataSize
+  [93] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1569 of 451539 compute units
+  [94] Program return: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA pQAAAAAAAAA=
+  [95] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [96] Program 11111111111111111111111111111111 invoke [3]
+  [97] Program 11111111111111111111111111111111 success
+  [98] Program log: Initialize the associated token account
+  [99] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+  [100] Program log: Instruction: InitializeImmutableOwner
+  [101] Program log: Please upgrade to SPL Token 2022 for immutable owner support
+  [102] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1405 of 445060 compute units
+  [103] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [104] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+  [105] Program log: Instruction: InitializeAccount3
+  [106] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4188 of 441229 compute units
+  [107] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [108] Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 21723 of 458460 compute units
+  [109] Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL success
+  [110] Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc invoke [2]
+  [111] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+  [112] Program log: Instruction: Transfer
+  [113] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4736 of 423792 compute units
+  [114] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [115] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+  [116] Program log: Instruction: Transfer
+  [117] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4645 of 417955 compute units
+  [118] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [119] Program data: HgeQtWb+m6FyJq7xhWu6Sm4j2H8Dy48ovH0laeAqS4TdGhO7SojhbT52/8G1tcoXTU3X9kVI/iAgbjDpHOpBAlle0k6ZOxu3gAgBAAATAQChr8mTAAAAAAAAAAAAAAAAQEtMAAAAAADZBWo1AQAAAAAAAAAAAAAAAAAAAAAAAAA=
+  [120] Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc consumed 19927 of 432800 compute units
+  [121] Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc success
+  [122] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]
+  [123] Program log: Instruction: Transfer
+  [124] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4645 of 410849 compute units
+  [125] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [126] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]
+  [127] Program log: Instruction: MintTo
+  [128] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4538 of 404370 compute units
+  [129] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [130] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]
+  [131] Program log: Instruction: CloseAccount
+  [132] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 2915 of 397795 compute units
+  [133] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [134] Program data: 5Hc96wAgD07GdhQQNqMDUSTavRu17h/3Eu7eKlyhqnLpn///wAga2pyjultESGiBCsQflR0TbSey6odFx2C0fB/sQ7rHljLwciau8YVrukpuI9h/A8uPKLx9JWngKkuE3RoTu0qI4W3WqtO3Kg577bY1VQm9MbldL1iBAvR+r6ShjfnkZGEh9YAIAQAAEwEAoa/JkwAAAAAAAAAAAAAAAI60WwAAAAAA6wSaaQAAAAA=
+  [135] Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w consumed 207440 of 599850 compute units
+  [136] Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w success
+
+─── Sending Transaction ───
+
+══════════════════════════════════════════════════════════════════════
+✓ TRANSACTION SUCCESSFUL
+══════════════════════════════════════════════════════════════════════
+
+Signature: 25psqafGEq3Q52MPR5vZacADCt7QDhvZDX4zr19EvVUDEnkTp39C5skNK7KVzFdzDxT99dm5MtjGNY7FBB9eZd69
+
+Explorer Link:
+https://explorer.solana.com/tx/25psqafGEq3Q52MPR5vZacADCt7QDhvZDX4zr19EvVUDEnkTp39C5skNK7KVzFdzDxT99dm5MtjGNY7FBB9eZd69?cluster=devnet
+
+Bond NFT Mint: EMi9tbQ7ppiUsgPL1ioQxKb3v3iCJa8pfNCCnJ8fjGHF
+Position Mint: BYTQMdXqdz8GUYBkGZ98z2pE38uxmtfWdKi4BPZHF44f
+
+Waiting for finalization...
+✓ Transaction finalized
+
+══════════════════════════════════════════════════════════════════════
+POST-TRANSACTION VERIFICATION
+══════════════════════════════════════════════════════════════════════
+
+─── Verifying Bond NFT ───
+Bond Mint Address: EMi9tbQ7ppiUsgPL1ioQxKb3v3iCJa8pfNCCnJ8fjGHF
+Supply: 1
+Decimals: 0
+Mint Authority: hitpB76esmaXFSUUP92iGcsL3rwhjy8VLLcBGxj7ZyN
+Freeze Authority: hitpB76esmaXFSUUP92iGcsL3rwhjy8VLLcBGxj7ZyN
+User Bond Balance: 1
+✓ Bond NFT minted successfully to user
+
+─── Verifying Whirlpool Position ───
+Position Account Address: 5CqXCNxiryTB33HdsdhFSNN5ZXpUVDEZdcrncVfAPknz
+Position Account Owner: whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc
+Position Account Data Length: 216
+✓ Whirlpool position created successfully
+Position Mint Address: BYTQMdXqdz8GUYBkGZ98z2pE38uxmtfWdKi4BPZHF44f
+Position Mint Supply: 1
+
+─── Verifying Position Custody ───
+Position Custody:
+  Bond Mint: EMi9tbQ7ppiUsgPL1ioQxKb3v3iCJa8pfNCCnJ8fjGHF
+  Position Mint: BYTQMdXqdz8GUYBkGZ98z2pE38uxmtfWdKi4BPZHF44f
+  Whirlpool: 8gbgyrnZJKiiUT29SJJ3VeJ7x7zHy11exABgD3omwVmN
+  Tick Lower: 67712
+  Tick Upper: 70400
+  Liquidity: 2479468449
+  Depositor: FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+  Created At: 2026-02-21T19:18:03.000Z
+  Bump: 255
+  Position Bump: 254
+✓ Position custody created successfully
+
+─── Verifying User Balances ───
+SOL Balance: 6.8989926 SOL
+Token B Balance: 18446724068518443558
+
+══════════════════════════════════════════════════════════════════════
+✓ ALL VERIFICATIONS PASSED
+══════════════════════════════════════════════════════════════════════
+
+✓ Script completed successfully

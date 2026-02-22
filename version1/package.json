@@ -1,0 +1,29 @@
+{
+  "name": "lp-bonds-contracts",
+  "version": "0.1.0",
+  "description": "LP Bonds Protocol - Whirlpool Position Custody and Bond NFT Minting",
+  "license": "Apache-2.0",
+  "scripts": {
+    "lint:fix": "prettier */*.js \"*/**/*{.js,.ts}\" -w",
+    "lint": "prettier */*.js \"*/**/*{.js,.ts}\" --check",
+    "test": "anchor test",
+    "build": "anchor build"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.32.1",
+    "@metaplex-foundation/mpl-token-metadata": "^3.1.0",
+    "@orca-so/whirlpools-sdk": "^0.11.0",
+    "@solana/spl-token": "^0.3.9",
+    "@solana/web3.js": "^1.87.6"
+  },
+  "devDependencies": {
+    "@types/bn.js": "^5.1.5",
+    "@types/chai": "^4.3.11",
+    "@types/mocha": "^10.0.6",
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0",
+    "prettier": "^3.1.1",
+    "ts-mocha": "^10.0.0",
+    "typescript": "^5.3.3"
+  }
+}
