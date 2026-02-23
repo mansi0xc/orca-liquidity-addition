@@ -1,0 +1,31 @@
+{
+  "name": "orca-whirlpool-oracle",
+  "version": "1.0.0",
+  "description": "Production-ready API oracle/indexer for Orca Whirlpool full-range positions",
+  "license": "Apache-2.0",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "ts-node src/server.ts",
+    "lint": "eslint src --ext .ts",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.30.1",
+    "@solana/spl-token": "^0.4.9",
+    "@solana/web3.js": "^1.95.4",
+    "bignumber.js": "^9.1.2",
+    "dotenv": "^16.4.5",
+    "fastify": "^4.28.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "pino-pretty": "^11.2.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
