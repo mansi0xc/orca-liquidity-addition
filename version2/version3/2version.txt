@@ -1,0 +1,59 @@
+══════════════════════════════════════════════════════════════════════
+LP BONDS PROTOCOL - VERIFY COLLATERAL VIA ORACLE
+══════════════════════════════════════════════════════════════════════
+Network: Devnet
+Debug Mode: true
+Timestamp: 2026-02-26T19:13:05.548Z
+
+─── Setting Up Connection ───
+Connection URL: https://api.devnet.solana.com
+User Public Key: FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+User SOL Balance: 6.4631384 SOL
+Program ID: AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w
+
+─── Deriving PDAs ───
+Config PDA: 458we97Eh6ESEvEsfwBBSSRwLhtptjvr8mhrZYsrtd4W
+Oracle Config PDA: 9TUWozHYtGfedcncHqjWAS36NxBYzi7nRrRXLmF1sXxc
+Nonce PDA: 41mgiCjN4Yvx98jy36GobsaJUxGJSmmgzHuKKL678r6q
+
+─── Checking Initialization Status ───
+Using wallet keypair as oracle authority
+Oracle Keypair Public Key: FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+
+📋 For solana-price-oracle .env file:
+ORACLE_PRIVATE_KEY=i/UXD/+Icz4VmCDKmwpFoY4uEBNdOHrGYdGwTRtj3WHWqtO3Kg577bY1VQm9MbldL1iBAvR+r6ShjfnkZGEh9Q==
+
+✓ Oracle initialized
+  Oracle Authority: 8QTUFdbizgjTWCjKfLPwiUDu3NWBGv8dCDNnKWEjq6uu
+✓ Nonce account initialized
+  Current Nonce: 0
+
+─── Preparing Test Data ───
+
+⚠️  Oracle authority mismatch. Updating to wallet keypair...
+  Current on-chain: 8QTUFdbizgjTWCjKfLPwiUDu3NWBGv8dCDNnKWEjq6uu
+  Wallet keypair:   FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+✓ Oracle authority updated to wallet keypair
+
+Test Data:
+  Bond Mint: GT2E9pomFhG5vW39WsfB6LqYMobiNZ9E6EY23tgQtSkn
+  Position Mint: 24kaNU1xPxmy6s5ShebiRjoJYd1DN3nxVXQCnDL9yoU2
+  Liquidity: 36583284382
+  Tick Range: -10000 to 10000
+  Current Tick: 500
+  Next Nonce: 1
+
+─── Fetching Oracle Data ───
+Oracle Response:
+  Signature: mkqnya9MDbhL0chHjrt0zr99oKM6zPwlPqx7Eug6Hfy+...
+  Message Length: 198
+  Oracle Public Key: FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+  Nonce: 1
+
+─── Building Ed25519 Instruction ───
+Local Signature Verification: ✓ PASSED
+Ed25519 Instruction:
+  Program ID: Ed25519SigVerify111111111111111111111111111
+  Data Length: 310
+
+─── Building Verify Collateral Instruction ───

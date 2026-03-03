@@ -1,0 +1,312 @@
+══════════════════════════════════════════════════════════════════════
+LP BONDS PROTOCOL - ADD LIQUIDITY AND MINT BOND
+══════════════════════════════════════════════════════════════════════
+Network: Devnet
+Debug Mode: true
+Timestamp: 2026-02-21T19:13:33.911Z
+
+─── Setting Up Connection ───
+Connection URL: https://api.devnet.solana.com
+User Public Key: FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+User SOL Balance: 6.921216 SOL
+Program ID (from IDL): AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w
+
+─── Validating Program Constants ───
+Program ID: AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w
+Whirlpool Program ID: ✓ whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc
+Token Mint A (wSOL): ✓ So11111111111111111111111111111111111111112
+Token Mint B: ✓ 4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2
+Tick Bounds: ✓ -443636 to 443636
+
+─── Fetching Whirlpool Data ───
+
+─── Validating Whirlpool Data ───
+Token A Match: ✓
+Token B Match: ✓
+Tick Spacing: ✓ 128
+Whirlpool Address: 8gbgyrnZJKiiUT29SJJ3VeJ7x7zHy11exABgD3omwVmN
+Token Vault A: 4E34XMs7rHQWsgavf9gHYzr9nSHnQM6vtbj9joNSNKDg
+Token Vault B: 2Pj7bSBJS47fjxRYNhTSMuQyYDon5Drr4GFioo9HqA8y
+Tick Spacing: 128
+Current Tick: 69082
+Liquidity: 31624347484
+Sqrt Price: 583366240222200398950
+
+─── Deriving PDAs ───
+✓ Protocol already initialized
+Generated Bond Mint: DUMjbNpxc1xhusKU5PfcprtCvvxb9VaRd1y4aUX7jzKw
+Generated Position Mint: AGeTxV1YYt6SLuo4HXgNw75zCMQwS7Vx5P3JHvREMdEF
+Generated wSOL Account: Dvy5gFFNfiqLxSgbeRKrNZ97bVvYwwr5AzL8AqVaepoN
+
+─── Calculating Tick Range ───
+Current Tick: 69082
+Tick Spacing: 128
+Tick Lower: 67712
+Tick Upper: 70400
+
+─── Validating Tick Range ───
+Tick Bounds: ✓
+Tick Order: ✓
+Tick Alignment: ✓
+Tick Array Lower: 7ZHbNczxoMPw6CGBWzi33gDYXhvRtXXKL6zLAxZTpDyb
+Tick Array Upper: 7ZHbNczxoMPw6CGBWzi33gDYXhvRtXXKL6zLAxZTpDyb
+✓ Both tick arrays exist
+
+─── Deriving Token Accounts ───
+
+Ensuring Token B ATA exists...
+✓ Token B ATA: EpsRoUcNSbUkwVVY5y5YquU4k5nfU5JivbypypndyXaA
+  Balance: 18446724073709551615
+
+─── Validating PDA Derivations ───
+Config PDA:
+  Address: 458we97Eh6ESEvEsfwBBSSRwLhtptjvr8mhrZYsrtd4W
+  Bump: 254
+Bond Authority PDA:
+  Address: hitpB76esmaXFSUUP92iGcsL3rwhjy8VLLcBGxj7ZyN
+  Bump: 255
+Position Custody PDA:
+  Address: BHxKV243ZURw3FvkHNP1JeAAtRHWdJgJ4xB9VbFq6wyZ
+  Bump: 253
+Whirlpool Position PDA:
+  Address: Df4xrQsoZzH2axV4AsN1bWAh2tWr5DnRA6MUkbEcEqRx
+  Bump: 253
+Tick Array Lower PDA:
+  Address: 7ZHbNczxoMPw6CGBWzi33gDYXhvRtXXKL6zLAxZTpDyb
+Tick Array Upper PDA:
+  Address: 7ZHbNczxoMPw6CGBWzi33gDYXhvRtXXKL6zLAxZTpDyb
+Position Token Account (User ATA):
+  Address: niNjbV1GRr2XTcd2UWY9fsoz15kwPp4H1PhZ1QZqvJQ
+Custody Position Token Account (Custody ATA):
+  Address: DKres5MPoibty3eRqpzLDEfJZmKVMYaq1hpiwTkAavEU
+User Bond Account:
+  Address: E7JcFQcJzqeun63qBN5KGR4NqaTewoUDUqhhMSqHYtCy
+User Token B Account:
+  Address: EpsRoUcNSbUkwVVY5y5YquU4k5nfU5JivbypypndyXaA
+
+─── Calculating Liquidity ───
+[DEBUG] Liquidity Calculation:
+{
+  "sqrtPriceLower": "544745445583857060000",
+  "sqrtPriceUpper": "623103037075042300000",
+  "sqrtPriceCurrent": "583366240222200398950",
+  "liquidityAmount": "2479468449",
+  "expectedAmountA": "4999999",
+  "expectedAmountB": "5191108056",
+  "tokenMaxA": "6009998",
+  "tokenMaxB": "6229339667",
+  "positionType": "TWO_SIDED"
+}
+Position Type: TWO_SIDED
+Desired SOL: 5000000 lamports
+Liquidity Amount: 2479468449
+Expected Amount A: 4999999 lamports
+Expected Amount B: 5191108056 tokens
+Token Max A: 6009998 lamports
+Token Max B: 6229339667 tokens
+
+─── All Transaction Accounts ───
+
+Accounts (in instruction order):
+  1. user:
+     Address: FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+     Signer: true, Writable: true
+  2. wsol_mint:
+     Address: So11111111111111111111111111111111111111112
+     Signer: false, Writable: false
+  3. token_mint_b:
+     Address: 4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2
+     Signer: false, Writable: false
+  4. bond_authority:
+     Address: hitpB76esmaXFSUUP92iGcsL3rwhjy8VLLcBGxj7ZyN
+     Signer: false, Writable: false
+  5. bond_mint:
+     Address: DUMjbNpxc1xhusKU5PfcprtCvvxb9VaRd1y4aUX7jzKw
+     Signer: true, Writable: true
+  6. user_wsol_account:
+     Address: Dvy5gFFNfiqLxSgbeRKrNZ97bVvYwwr5AzL8AqVaepoN
+     Signer: true, Writable: true
+  7. user_token_b_account:
+     Address: EpsRoUcNSbUkwVVY5y5YquU4k5nfU5JivbypypndyXaA
+     Signer: false, Writable: true
+  8. user_bond_account:
+     Address: E7JcFQcJzqeun63qBN5KGR4NqaTewoUDUqhhMSqHYtCy
+     Signer: false, Writable: true
+  9. config:
+     Address: 458we97Eh6ESEvEsfwBBSSRwLhtptjvr8mhrZYsrtd4W
+     Signer: false, Writable: true
+  10. position_custody:
+     Address: BHxKV243ZURw3FvkHNP1JeAAtRHWdJgJ4xB9VbFq6wyZ
+     Signer: false, Writable: true
+  11. position_mint:
+     Address: AGeTxV1YYt6SLuo4HXgNw75zCMQwS7Vx5P3JHvREMdEF
+     Signer: true, Writable: true
+  12. whirlpool_position:
+     Address: Df4xrQsoZzH2axV4AsN1bWAh2tWr5DnRA6MUkbEcEqRx
+     Signer: false, Writable: true
+  13. position_token_account:
+     Address: niNjbV1GRr2XTcd2UWY9fsoz15kwPp4H1PhZ1QZqvJQ
+     Signer: false, Writable: true
+  14. custody_position_token_account:
+     Address: DKres5MPoibty3eRqpzLDEfJZmKVMYaq1hpiwTkAavEU
+     Signer: false, Writable: true
+  15. whirlpool:
+     Address: 8gbgyrnZJKiiUT29SJJ3VeJ7x7zHy11exABgD3omwVmN
+     Signer: false, Writable: true
+  16. token_vault_a:
+     Address: 4E34XMs7rHQWsgavf9gHYzr9nSHnQM6vtbj9joNSNKDg
+     Signer: false, Writable: true
+  17. token_vault_b:
+     Address: 2Pj7bSBJS47fjxRYNhTSMuQyYDon5Drr4GFioo9HqA8y
+     Signer: false, Writable: true
+  18. tick_array_lower:
+     Address: 7ZHbNczxoMPw6CGBWzi33gDYXhvRtXXKL6zLAxZTpDyb
+     Signer: false, Writable: true
+  19. tick_array_upper:
+     Address: 7ZHbNczxoMPw6CGBWzi33gDYXhvRtXXKL6zLAxZTpDyb
+     Signer: false, Writable: true
+  20. whirlpool_program:
+     Address: whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc
+     Signer: false, Writable: false
+  21. token_program:
+     Address: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+     Signer: false, Writable: false
+  22. associated_token_program:
+     Address: ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL
+     Signer: false, Writable: false
+  23. system_program:
+     Address: 11111111111111111111111111111111
+     Signer: false, Writable: false
+  24. rent:
+     Address: SysvarRent111111111111111111111111111111111
+     Signer: false, Writable: false
+
+Signers:
+  1. user: FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+  2. bond_mint: DUMjbNpxc1xhusKU5PfcprtCvvxb9VaRd1y4aUX7jzKw
+  3. position_mint: AGeTxV1YYt6SLuo4HXgNw75zCMQwS7Vx5P3JHvREMdEF
+  4. user_wsol_account: Dvy5gFFNfiqLxSgbeRKrNZ97bVvYwwr5AzL8AqVaepoN
+
+Instruction Arguments:
+  tick_lower_index: 67712
+  tick_upper_index: 70400
+  liquidity_amount: 2479468449
+  token_max_a: 6009998
+  token_max_b: 6229339667
+  sol_amount: 6009998
+
+─── Building Transaction ───
+
+Simulating transaction...
+
+─── Simulating Transaction ───
+Simulation Error: {"InstructionError":[1,"IncorrectProgramId"]}
+  [0] Program ComputeBudget111111111111111111111111111111 invoke [1]
+  [1] Program ComputeBudget111111111111111111111111111111 success
+  [2] Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w invoke [1]
+  [3] Program log: Instruction: AddLiquidityAndMintBond
+  [4] Program 11111111111111111111111111111111 invoke [2]
+  [5] Program 11111111111111111111111111111111 success
+  [6] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]
+  [7] Program log: Instruction: InitializeMint2
+  [8] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 2828 of 587989 compute units
+  [9] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [10] Program 11111111111111111111111111111111 invoke [2]
+  [11] Program 11111111111111111111111111111111 success
+  [12] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]
+  [13] Program log: Instruction: InitializeAccount3
+  [14] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 3158 of 579891 compute units
+  [15] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [16] Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL invoke [2]
+  [17] Program log: Create
+  [18] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+  [19] Program log: Instruction: GetAccountDataSize
+  [20] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1622 of 565960 compute units
+  [21] Program return: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA pQAAAAAAAAA=
+  [22] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [23] Program 11111111111111111111111111111111 invoke [3]
+  [24] Program 11111111111111111111111111111111 success
+  [25] Program log: Initialize the associated token account
+  [26] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+  [27] Program log: Instruction: InitializeImmutableOwner
+  [28] Program log: Please upgrade to SPL Token 2022 for immutable owner support
+  [29] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1405 of 559428 compute units
+  [30] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [31] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+  [32] Program log: Instruction: InitializeAccount3
+  [33] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4241 of 555599 compute units
+  [34] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [35] Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 20228 of 571303 compute units
+  [36] Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL success
+  [37] Program 11111111111111111111111111111111 invoke [2]
+  [38] Program 11111111111111111111111111111111 success
+  [39] Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL invoke [2]
+  [40] Program log: Create
+  [41] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+  [42] Program log: Instruction: GetAccountDataSize
+  [43] Program log: Error: IncorrectProgramId
+  [44] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 884 of 530156 compute units
+  [45] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA failed: incorrect program id for instruction
+  [46] Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 6305 of 535577 compute units
+  [47] Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL failed: incorrect program id for instruction
+  [48] Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w consumed 70578 of 599850 compute units
+  [49] Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w failed: incorrect program id for instruction
+
+Simulation logs:
+  [0] Program ComputeBudget111111111111111111111111111111 invoke [1]
+  [1] Program ComputeBudget111111111111111111111111111111 success
+  [2] Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w invoke [1]
+  [3] Program log: Instruction: AddLiquidityAndMintBond
+  [4] Program 11111111111111111111111111111111 invoke [2]
+  [5] Program 11111111111111111111111111111111 success
+  [6] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]
+  [7] Program log: Instruction: InitializeMint2
+  [8] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 2828 of 587989 compute units
+  [9] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [10] Program 11111111111111111111111111111111 invoke [2]
+  [11] Program 11111111111111111111111111111111 success
+  [12] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]
+  [13] Program log: Instruction: InitializeAccount3
+  [14] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 3158 of 579891 compute units
+  [15] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [16] Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL invoke [2]
+  [17] Program log: Create
+  [18] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+  [19] Program log: Instruction: GetAccountDataSize
+  [20] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1622 of 565960 compute units
+  [21] Program return: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA pQAAAAAAAAA=
+  [22] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [23] Program 11111111111111111111111111111111 invoke [3]
+  [24] Program 11111111111111111111111111111111 success
+  [25] Program log: Initialize the associated token account
+  [26] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+  [27] Program log: Instruction: InitializeImmutableOwner
+  [28] Program log: Please upgrade to SPL Token 2022 for immutable owner support
+  [29] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1405 of 559428 compute units
+  [30] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [31] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+  [32] Program log: Instruction: InitializeAccount3
+  [33] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4241 of 555599 compute units
+  [34] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+  [35] Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 20228 of 571303 compute units
+  [36] Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL success
+  [37] Program 11111111111111111111111111111111 invoke [2]
+  [38] Program 11111111111111111111111111111111 success
+  [39] Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL invoke [2]
+  [40] Program log: Create
+  [41] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+  [42] Program log: Instruction: GetAccountDataSize
+  [43] Program log: Error: IncorrectProgramId
+  [44] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 884 of 530156 compute units
+  [45] Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA failed: incorrect program id for instruction
+  [46] Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 6305 of 535577 compute units
+  [47] Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL failed: incorrect program id for instruction
+  [48] Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w consumed 70578 of 599850 compute units
+  [49] Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w failed: incorrect program id for instruction
+
+══════════════════════════════════════════════════════════════════════
+✗ TRANSACTION FAILED
+══════════════════════════════════════════════════════════════════════
+
+Error Message: Transaction simulation failed
+══════════════════════════════════════════════════════════════════════

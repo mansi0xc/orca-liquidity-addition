@@ -1,0 +1,131 @@
+$  npx ts-node scripts/devnet-add-liquidity.ts 2>&1
+═══════════════════════════════════════════════════════════════
+LP BONDS PROTOCOL - DEVNET LIQUIDITY ADDITION
+═══════════════════════════════════════════════════════════════
+
+Network:    devnet
+Program ID: AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w
+Whirlpool:  8gbgyrnZJKiiUT29SJJ3VeJ7x7zHy11exABgD3omwVmN
+User:       FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+
+User SOL Balance: 6.96171808 SOL
+
+─── Fetching Whirlpool Data ───
+Token Mint A (wSOL): So11111111111111111111111111111111111111112
+Token Mint B:        4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2
+Token Vault A:       4E34XMs7rHQWsgavf9gHYzr9nSHnQM6vtbj9joNSNKDg
+Token Vault B:       2Pj7bSBJS47fjxRYNhTSMuQyYDon5Drr4GFioo9HqA8y
+Tick Spacing:        128
+Current Tick:        69082
+Liquidity:           31624347484
+
+─── Deriving PDAs ───
+Config PDA:         458we97Eh6ESEvEsfwBBSSRwLhtptjvr8mhrZYsrtd4W
+Bond Authority PDA: hitpB76esmaXFSUUP92iGcsL3rwhjy8VLLcBGxj7ZyN
+✓ Protocol already initialized
+
+─── Generating Keypairs ───
+Bond Mint:      GJpe2jUo4bpyj5XdK73yHSBfnSDpQg3i65PSWjPAYk5Z
+Position Mint:  B9ZdU6K4dJBZ1mGmSKBUZrga6YP2AhKArXKzdR5peEst
+Position Custody PDA: 37FsvCPPiBksxU4feu33q87qt2ZRHNdtX5PbMH7qGkjw
+Bond Metadata PDA:    HTRvgndKvgRCHWBEb99r8CdhRSaevLJxHLkRuEMLgRZP
+Whirlpool Position:   F2GvGVCPcL1hVMEG15k1pZeAGCYehZ4UxoXnSMHTAv8A
+
+─── Calculating Tick Range ───
+Tick Lower Index: 67712
+Tick Upper Index: 70400
+Current Tick:     69082
+Tick Array Lower: 7ZHbNczxoMPw6CGBWzi33gDYXhvRtXXKL6zLAxZTpDyb
+Tick Array Upper: 7ZHbNczxoMPw6CGBWzi33gDYXhvRtXXKL6zLAxZTpDyb
+✓ Both tick arrays exist
+
+─── Deriving User Token Accounts ───
+User wSOL Account (temp): ESJtQHQjh3tF1cYPkzXcEw5pu4ooeSBmedxav5PzTNwC
+User Token B Account:     EpsRoUcNSbUkwVVY5y5YquU4k5nfU5JivbypypndyXaA
+User Bond Account:        37SfpGshhUGgJzCWju7GJLPBVKKgRscyHC16UqmekN6h
+Position Token Account:   9hY21JXiy1yzRq82kYUeeLTFeMCtCYPUKqzMvYyLrfm2
+
+─── Ensuring Token B ATA Exists ───
+✓ Token B ATA ready: EpsRoUcNSbUkwVVY5y5YquU4k5nfU5JivbypypndyXaA
+  Balance: 18446724073709551615 tokens
+
+─── Preparing Transaction ───
+Position Type:     TWO-SIDED (Both tokens required - price in range)
+SOL Amount:        10000000 lamports ( 0.01 SOL)
+Liquidity Amount:  1000000
+Token Max A:       10000000 lamports
+Token Max B:       1000000 tokens
+User Token B bal:  18446724073709551615
+Bond Name:         B
+
+─── Sending Transaction ───
+
+═══════════════════════════════════════════════════════════════
+✗ TRANSACTION FAILED
+═══════════════════════════════════════════════════════════════
+
+Program Logs:
+   Program ComputeBudget111111111111111111111111111111 invoke [1]
+   Program ComputeBudget111111111111111111111111111111 success
+   Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w invoke [1]
+   Program log: Instruction: AddLiquidityAndMintBond
+   Program log: AnchorError caused by account: whirlpool. Error Code: AccountOwnedByWrongProgram. Error Number: 3007. Error Message: The given account is owned by a different program than expected.
+   Program log: Left:
+   Program log: whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc
+   Program log: Right:
+   Program log: AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w
+   Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w consumed 11039 of 599850 compute units
+   Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w failed: custom program error: 0xbbf
+
+Error Message: AnchorError caused by account: whirlpool. Error Code: AccountOwnedByWrongProgram. Error Number: 3007. Error Message: The given account is owned by a different program than expected.
+Program log: Left:
+Program log: whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc
+Program log: Right:
+Program log: AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w
+═══════════════════════════════════════════════════════════════
+
+AnchorError: AnchorError caused by account: whirlpool. Error Code: AccountOwnedByWrongProgram. Error Number: 3007. Error Message: The given account is owned by a different program than expected.
+Program log: Left:
+Program log: whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc
+Program log: Right:
+Program log: AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w
+    at AnchorError.parse (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/node_modules/@coral-xyz/anchor/src/error.ts:168:14)
+    at translateError (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/node_modules/@coral-xyz/anchor/src/error.ts:277:35)
+    at MethodsBuilder.rpc [as _rpcFn] (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/node_modules/@coral-xyz/anchor/src/program/namespace/rpc.ts:35:29)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at main (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/scripts/devnet-add-liquidity.ts:496:16) {
+  errorLogs: [
+    'Program log: AnchorError caused by account: whirlpool. Error Code: AccountOwnedByWrongProgram. Error Number: 3007. Error Message: The given account is owned by a different program than expected.',
+    'Program log: Left:',
+    'Program log: whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc',
+    'Program log: Right:',
+    'Program log: AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w'
+  ],
+  logs: [
+    'Program ComputeBudget111111111111111111111111111111 invoke [1]',
+    'Program ComputeBudget111111111111111111111111111111 success',
+    'Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w invoke [1]',
+    'Program log: Instruction: AddLiquidityAndMintBond',
+    'Program log: AnchorError caused by account: whirlpool. Error Code: AccountOwnedByWrongProgram. Error Number: 3007. Error Message: The given account is owned by a different program than expected.',
+    'Program log: Left:',
+    'Program log: whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc',
+    'Program log: Right:',
+    'Program log: AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w',
+    'Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w consumed 11039 of 599850 compute units',
+    'Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w failed: custom program error: 0xbbf'
+  ],
+  error: {
+    errorCode: { code: 'AccountOwnedByWrongProgram', number: 3007 },
+    errorMessage: 'The given account is owned by a different program than expected',
+    comparedValues: [
+      [PublicKey [PublicKey(whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc)]],
+      [PublicKey [PublicKey(AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w)]]
+    ],
+    origin: 'whirlpool'
+  },
+  _programErrorStack: ProgramErrorStack {
+    stack: [
+      [PublicKey [PublicKey(AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w)]]
+    ]
+  }
+}
