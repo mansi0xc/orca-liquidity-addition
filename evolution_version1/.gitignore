@@ -1,0 +1,43 @@
+# Anchor build artifacts
+target/
+.anchor/
+
+# Node
+node_modules/
+package-lock.json
+yarn.lock
+
+# IDL
+target/idl/
+target/types/
+
+# Test artifacts
+.test-ledger/
+test-ledger/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Keypairs (NEVER commit)
+*.json
+!package.json
+!tsconfig.json
+
+# Build
+dist/
+build/

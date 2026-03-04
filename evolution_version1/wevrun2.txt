@@ -1,0 +1,74 @@
+ANCHOR_PROVIDER_URL=https://api.devnet.solana.com ANCHOR_WALLET=~/.config/solana/id.json npx ts-node scripts/target-level-3.ts 2>&1
+╔════════════════════════════════════════════════════════════╗
+║           LP Bonds Evolution - Devnet Script               ║
+╚════════════════════════════════════════════════════════════╝
+
+Wallet: FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+Evolution Program: Bk81YHvFinrSCs64W7MzobDhMJNXrUEqAU5YpAWcotua
+
+PDAs:
+  Evolution Config: aUH94SCahpmGNGQcHwF5hDkCEJgk7UAVGwSqNYuvxAR
+  Layer Token Authority: F1Ncs7Kme3NrwNoqesNPW3oGodxZPduW41srh4YpPvoK
+  Bond Authority: HXu8doZfkQQJVY8rxVsH64EepnbT7hBDYG1CgXa72gkW
+
+✓ Evolution config already initialized
+
+─── BOND EVOLUTION ───
+Source Bond Mint: CL9ZgeuW3NVostFQoSJRGT4zDFtysLLnPj34doYvzDZz
+Target Level: 3
+Source Custody PDA: Hn6iPKiMqs1V8UTabLnYmR8TVja5HRPY6zV3q23KdNgt
+
+Level Config:
+  Whirlpool: GMNFmkhU8hnCwofqh9gGwW8H6SqohrP8PmoJQAMycNwZ
+  Required Amount A: 3000000000
+  Required Amount B: 1500000000
+  Fee BPS: 150
+  Lock Duration: 7776000 seconds
+
+Nonce: 0 -> 1
+Signature generated: 8802f63eedc5d15e9f303f3e20cad02e...
+
+Target Accounts:
+  Target Bond Mint: 5uJU3kAeet4ugqobSARycPdvmjgZpJE4nqDqXPDU1uJB
+  Position Mint: 6hvsPwxy2R2AV5D6YQbPugj9iHzRsdE5TADwMLreBf3a
+  Target Custody: Dmz4yuT2yC1QPGhQeNWU4c1GmtBehes9U1GKftLXWatp
+  Evolution Record: BVnKBUK5YirqtPXgHRXfhLHjBxLnMD5XHN7QC2EUf8Fo
+  Whirlpool Position: 14NSHJFFsZnj3reDv5ZDWnDWMky2NVaPAKxdLAVm4fen
+
+⚠ Evolution transaction ready to execute.
+  Review the accounts above and ensure you have sufficient tokens.
+  The execution requires:
+  - User must hold the source bond NFT
+  - User must have sufficient Token A balance
+  - Tick arrays must be initialized for the target whirlpool
+  - Treasury token account must exist
+  Token Vault A: GhMhn8ReTzneeDWvZ2TNarpXL6XiLG73FtLvP5RT9egC
+  Token Vault B: GJALkquF5NX1Sur7Nca7xLhKTquC8bd6eKwtzvCghnhn
+  Tick Spacing: 128
+  Tick Array Lower: CBZV88p3tN99fhh6DBfrcZFPuJrA2zbM1LQiueXZ8bNw
+  Tick Array Upper: D3ZhPA2BF4wXCNNX6Y33QmWkxcWArNVrwfb1y68Wssru
+
+⚠ Evolution execution is commented out. Review prerequisites and uncomment to execute.
+
+Checking prerequisite accounts...
+  Token A Mint: 4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2
+  User Token A Account: EpsRoUcNSbUkwVVY5y5YquU4k5nfU5JivbypypndyXaA
+  ✓ User Token A account exists
+  Treasury Token Account: EpsRoUcNSbUkwVVY5y5YquU4k5nfU5JivbypypndyXaA
+  ✓ Treasury Token account exists
+
+🚀 Creating Address Lookup Table for large transaction...
+  ALT created: 6gdCugcoYk2yKBGVfikTUwQ2eosmXNAj3CVMqkbm4ueT
+  Tx: https://explorer.solana.com/tx/2q1A64i6m6tyqqskVTs5HFFi8odLvCGFubDcWJ9fXD4aRPHgbKcBQwKzuYurqNE9cgkaQ8ko1Npt8KWZaepYivPg?cluster=devnet
+  Waiting for ALT activation (5 seconds)...
+
+🚀 Executing evolution transaction with ALT...
+  Instruction data length: 73
+  Number of accounts: 35
+  Ed25519 instruction data length: 267
+
+  Simulating transaction...
+  Simulation passed!
+
+✓ Evolution complete!
+  Tx: https://explorer.solana.com/tx/47PF9abj6ymUcj7XT3SvLbk4sbFSqUUUPB9vKA8RuiJnTTHB9HwfeXQja1fwnTbHYJaHJB56zpj5HZemDysf2XcL?cluster=devnet

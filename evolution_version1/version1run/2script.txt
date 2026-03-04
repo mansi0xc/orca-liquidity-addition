@@ -1,0 +1,77 @@
+$  npx ts-node scripts/devnet-add-liquidity.ts 2>&1
+═══════════════════════════════════════════════════════════════
+LP BONDS PROTOCOL - DEVNET LIQUIDITY ADDITION
+═══════════════════════════════════════════════════════════════
+
+Network:    devnet
+Program ID: AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w
+Whirlpool:  8gbgyrnZJKiiUT29SJJ3VeJ7x7zHy11exABgD3omwVmN
+User:       FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+
+User SOL Balance: 6.96768796 SOL
+
+─── Fetching Whirlpool Data ───
+Token Mint A (wSOL): So11111111111111111111111111111111111111112
+Token Mint B:        4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2
+Token Vault A:       4E34XMs7rHQWsgavf9gHYzr9nSHnQM6vtbj9joNSNKDg
+Token Vault B:       2Pj7bSBJS47fjxRYNhTSMuQyYDon5Drr4GFioo9HqA8y
+Tick Spacing:        128
+Current Tick:        69082
+Liquidity:           31624347484
+
+─── Deriving PDAs ───
+Config PDA:         458we97Eh6ESEvEsfwBBSSRwLhtptjvr8mhrZYsrtd4W
+Bond Authority PDA: hitpB76esmaXFSUUP92iGcsL3rwhjy8VLLcBGxj7ZyN
+✓ Protocol already initialized
+
+─── Generating Keypairs ───
+Bond Mint:      9tNLyV9UmdNHfYyRFJgb3dViE1aMFhrhPfDqzKyMdgJ1
+Position Mint:  HLHvB1taepNUvHxRgtBYxo9BUcTYnQubBcwZPRgGcjoz
+Position Custody PDA: F6DrQdMnzPovzYzgV5yGipCMxjaXGG316hQ4Djey1TzG
+Bond Metadata PDA:    TcSgZGi6jMWZZcFdrqL7qQQzA3bfbyXVZZ47YKgEsSX
+Whirlpool Position:   75Da5uN3JUndTp9tVHMPaCdRukWCvXu1MoJWYhf28ier
+
+─── Calculating Tick Range ───
+Tick Lower Index: 67712
+Tick Upper Index: 70400
+Current Tick:     69082
+Tick Array Lower: 7ZHbNczxoMPw6CGBWzi33gDYXhvRtXXKL6zLAxZTpDyb
+Tick Array Upper: 7ZHbNczxoMPw6CGBWzi33gDYXhvRtXXKL6zLAxZTpDyb
+✓ Both tick arrays exist
+
+─── Deriving User Token Accounts ───
+User wSOL Account (temp): 7MwdxchwYUtq83SiQCYqvXnBS5sAyCUxNVHfMDUp9a8a
+User Token B Account:     EpsRoUcNSbUkwVVY5y5YquU4k5nfU5JivbypypndyXaA
+User Bond Account:        J4dCayCAC9wKrWtDkJhz7e6fbPfyV2h9prTHgWzvrgMN
+Position Token Account:   3NdZUXLBtZfXMWr96nzGzJhfdRqJk9QsJMHWez4GPDxa
+
+─── Ensuring Token B ATA Exists ───
+✓ Token B ATA ready: EpsRoUcNSbUkwVVY5y5YquU4k5nfU5JivbypypndyXaA
+  Balance: 18446724073709551615 tokens
+
+─── Preparing Transaction ───
+Position Type:     TWO-SIDED (Both tokens required - price in range)
+SOL Amount:        10000000 lamports ( 0.01 SOL)
+Liquidity Amount:  1000000
+Token Max A:       10000000 lamports
+Token Max B:       1000000 tokens
+User Token B bal:  18446724073709551615
+Bond Name:         LPB
+
+─── Sending Transaction ───
+
+═══════════════════════════════════════════════════════════════
+✗ TRANSACTION FAILED
+═══════════════════════════════════════════════════════════════
+
+Error Message: Transaction too large: 1235 > 1232
+═══════════════════════════════════════════════════════════════
+
+Error: Transaction too large: 1235 > 1232
+    at invariant (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/node_modules/@solana/web3.js/src/utils/assert.ts:6:11)
+    at Transaction._serialize (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/node_modules/@solana/web3.js/src/transaction/legacy.ts:860:5)
+    at Transaction.serialize (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/node_modules/@solana/web3.js/src/transaction/legacy.ts:832:17)
+    at AnchorProvider.sendAndConfirm (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/node_modules/@coral-xyz/anchor/src/provider.ts:164:22)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at MethodsBuilder.rpc [as _rpcFn] (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/node_modules/@coral-xyz/anchor/src/program/namespace/rpc.ts:29:16)
+    at main (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/scripts/devnet-add-liquidity.ts:496:16)

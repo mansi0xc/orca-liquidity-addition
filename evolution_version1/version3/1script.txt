@@ -1,0 +1,172 @@
+
+══════════════════════════════════════════════════════════════════════
+LP BONDS PROTOCOL - VERIFY COLLATERAL VIA ORACLE
+══════════════════════════════════════════════════════════════════════
+Network: Devnet
+Debug Mode: true
+Timestamp: 2026-02-26T18:58:06.806Z
+
+─── Setting Up Connection ───
+Connection URL: https://api.devnet.solana.com
+User Public Key: FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+User SOL Balance: 6.4631434 SOL
+Program ID: AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w
+
+─── Deriving PDAs ───
+Config PDA: 458we97Eh6ESEvEsfwBBSSRwLhtptjvr8mhrZYsrtd4W
+Oracle Config PDA: 9TUWozHYtGfedcncHqjWAS36NxBYzi7nRrRXLmF1sXxc
+Nonce PDA: 41mgiCjN4Yvx98jy36GobsaJUxGJSmmgzHuKKL678r6q
+
+─── Checking Initialization Status ───
+✓ Oracle initialized
+  Oracle Authority: 8vPuw52QaHT24knddHGGv1LJucdbicWRz6Nh21NRzWbm
+✓ Nonce account initialized
+  Current Nonce: 0
+
+─── Preparing Test Data ───
+
+⚠️  Demo mode: Updating oracle authority to test keypair
+✓ Oracle authority updated for testing
+  New Authority: 8QTUFdbizgjTWCjKfLPwiUDu3NWBGv8dCDNnKWEjq6uu
+
+Test Data:
+  Bond Mint: 6vUMZGp6hDNYh9rHxcFsh1bhXRqKWjJUf61ft6wkPwnY
+  Position Mint: 2HbFKmqx8AQhvdmy3uPKwKKMzDDAP5megyRFr8dLaPxG
+  Liquidity: 36583284382
+  Tick Range: -10000 to 10000
+  Current Tick: 500
+  Next Nonce: 1
+
+─── Fetching Oracle Data ───
+Oracle Response:
+  Signature: ShAMuhdHDgXRT1QU3p9fG1b87x85N6ko+QueXbKCCF2Z...
+  Message Length: 198
+  Oracle Public Key: 8QTUFdbizgjTWCjKfLPwiUDu3NWBGv8dCDNnKWEjq6uu
+  Nonce: 1
+
+─── Building Ed25519 Instruction ───
+Local Signature Verification: ✓ PASSED
+Ed25519 Instruction:
+  Program ID: Ed25519SigVerify111111111111111111111111111
+  Data Length: 310
+
+─── Building Verify Collateral Instruction ───
+
+⚠️  Demo Note:
+In production, you would call verify_collateral after
+having a real bond/custody position from add_liquidity_and_mint_bond.
+
+The full transaction would include:
+1. ComputeBudget instruction
+2. Ed25519 precompile instruction (signature verification)
+3. verify_collateral instruction
+
+Verify Collateral Parameters:
+  amount0: 1000000000
+  amount1: 2000000000
+  liquidity: 36583284382
+  tick_lower: -10000
+  tick_upper: 10000
+  tick_current: 500
+  nonce: 1
+
+─── Full Transaction Structure ───
+
+Transaction Layout:
+┌─────────────────────────────────────────────────────────────────────┐
+│ Instruction 0: ComputeBudget.setComputeUnitLimit(400_000)           │
+├─────────────────────────────────────────────────────────────────────┤
+│ Instruction 1: Ed25519Program.createInstructionWithPublicKey        │
+│   - publicKey: 8QTUFdbizgjTWCjKfLPw...                              │
+│   - signature: [64 bytes]                                           │
+│   - message:   [198 bytes canonical message]                        │
+├─────────────────────────────────────────────────────────────────────┤
+│ Instruction 2: verify_collateral                                    │
+│   Accounts:                                                         │
+│     - sender (signer): FSyL13FTp3Yrgdo8VWpo...                      │
+│     - oracle_config: 9TUWozHYtGfedcncHqjW...                        │
+│     - nonce_account: 41mgiCjN4Yvx98jy36Go...                        │
+│     - bond_mint: 6vUMZGp6hDNYh9rHxcFs...                            │
+│     - position_custody: BTGkFAP2LD8ozSZDPE93...                     │
+│     - instructions_sysvar: Sysvar1nstructions...                    │
+│   Args:                                                             │
+│     - amount0: 1000000000                                           │
+│     - amount1: 2000000000                                           │
+│     - liquidity: 36583284382                                        │
+│     - tick_lower: -10000                                            │
+│     - tick_upper: 10000                                             │
+│     - tick_current: 500                                             │
+│     - nonce: 1                                                      │
+│     - signature: [64 bytes]                                         │
+└─────────────────────────────────────────────────────────────────────┘
+
+
+══════════════════════════════════════════════════════════════════════
+SECURITY VERIFICATION CHECKLIST
+══════════════════════════════════════════════════════════════════════
+
+✓ Deterministic Serialization
+  - Fixed 198-byte message format
+  - Little-endian encoding
+  - No JSON serialization
+  - No floating point values
+
+✓ Ed25519 Verification Enforced
+  - Signature verified by native Solana Ed25519 program
+  - Transaction fails if signature invalid
+  - Oracle authority bound to signature
+
+✓ Nonce Replay Protection
+  - Per-user nonce account
+  - Strictly increasing nonce required
+  - Same nonce cannot be reused
+
+✓ Cross-User Replay Prevention
+  - Sender pubkey is part of signed message
+  - Signature bound to specific user
+
+✓ Cross-Position Replay Prevention
+  - Bond mint and position mint in signed message
+  - Signature bound to specific position
+
+✓ Contract Address Binding
+  - Program ID is part of signed message
+  - Cannot replay on different contracts
+
+✓ No Circular Trust
+  - Oracle API independent of on-chain state
+  - On-chain verification does not trust API blindly
+
+
+══════════════════════════════════════════════════════════════════════
+EXECUTION SUMMARY
+══════════════════════════════════════════════════════════════════════
+
+Oracle Verification Demo Complete
+─────────────────────────────────
+
+Oracle Authority: 8QTUFdbizgjTWCjKfLPwiUDu3NWBGv8dCDNnKWEjq6uu
+Signature:        4a100cba17470e05d14f5414de9f5f1b...
+Message Hash:     1aebe56e01f2ddb81a2bc59ec548f5be...
+Nonce Used:       1
+
+To perform actual verification:
+1. Create a real bond using add_liquidity_and_mint_bond
+2. Call the Oracle API with the bond mint
+3. Build transaction with Ed25519 + verify_collateral
+4. Submit transaction
+
+The signature binds:
+  - Bond Mint:        6vUMZGp6hDNYh9rHxcFsh1bhXRqKWjJUf61ft6wkPwnY
+  - Position Mint:    2HbFKmqx8AQhvdmy3uPKwKKMzDDAP5megyRFr8dLaPxG
+  - Liquidity:        36583284382
+  - Amount0/1:        1000000000 / 2000000000
+  - Tick Range:       -10000 to 10000
+  - Current Tick:     500
+  - Sender:           FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+  - Contract:         AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w
+  - Nonce:            1
+
+
+✓ Script completed successfully
+
