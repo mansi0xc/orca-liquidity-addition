@@ -1,0 +1,21 @@
+$  anchor deploy --provider.cluster devnet 2>&1
+Deploying cluster: https://api.devnet.solana.com
+Upgrade authority: /Users/mansitibrewal/.config/solana/id.json
+Deploying program "lp_bonds"...
+Program path: /Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/target/deploy/lp_bonds.so...
+Program Id: AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w
+
+Signature: 2SamM45ebpVMURCY8GsqDTTWRTWcZouKf6wYcEJQ3pGCDYJ22ypGumTci2DkcmUs17ALt4ikWDw336iHub4xg81X
+
+Waiting for program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w to be confirmed...
+Program confirmed on-chain
+Idl data length: 3859 bytes
+Step 0/3859 
+Step 600/3859 
+Step 1200/3859 
+Step 1800/3859 
+Step 2400/3859 
+Step 3000/3859 
+Step 3600/3859 
+Idl account 3QiwcZEYBPn1Lw7x2QH8x48QupVDjSQ13g4XebegAemj successfully upgraded
+Deploy success

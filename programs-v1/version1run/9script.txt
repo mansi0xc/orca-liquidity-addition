@@ -1,0 +1,226 @@
+$  npx ts-node scripts/devnet-add-liquidity.ts 2>&1
+═══════════════════════════════════════════════════════════════
+LP BONDS PROTOCOL - DEVNET LIQUIDITY ADDITION
+═══════════════════════════════════════════════════════════════
+
+Network:    devnet
+Program ID: AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w
+Whirlpool:  8gbgyrnZJKiiUT29SJJ3VeJ7x7zHy11exABgD3omwVmN
+User:       FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+
+User SOL Balance: 6.921216 SOL
+
+─── Fetching Whirlpool Data ───
+Token Mint A (wSOL): So11111111111111111111111111111111111111112
+Token Mint B:        4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2
+Token Vault A:       4E34XMs7rHQWsgavf9gHYzr9nSHnQM6vtbj9joNSNKDg
+Token Vault B:       2Pj7bSBJS47fjxRYNhTSMuQyYDon5Drr4GFioo9HqA8y
+Tick Spacing:        128
+Current Tick:        69082
+Liquidity:           31624347484
+
+─── Deriving PDAs ───
+Config PDA:         458we97Eh6ESEvEsfwBBSSRwLhtptjvr8mhrZYsrtd4W
+Bond Authority PDA: hitpB76esmaXFSUUP92iGcsL3rwhjy8VLLcBGxj7ZyN
+✓ Protocol already initialized
+
+─── Generating Keypairs ───
+Bond Mint:      2shnsDCzuVby8JCqFcfHhesq24iJkbijzFjDmQNNHQER
+Position Mint:  8FU1Dxb7inn1SgmVKRuvhLDsoCZUhSJ15RmbzcGAAMkn
+Position Custody PDA: HTopbE3XDnn4Haaj5QH1fWnfUER9DZHmDchy5ZrS4x1E
+Whirlpool Position:   6Fg1SJVbPoyDRktf5DJHNSwJEkVurDfw1J1Q84e658Rd
+
+─── Calculating Tick Range ───
+Tick Lower Index: 67712
+Tick Upper Index: 70400
+Current Tick:     69082
+Tick Array Lower: 7ZHbNczxoMPw6CGBWzi33gDYXhvRtXXKL6zLAxZTpDyb
+Tick Array Upper: 7ZHbNczxoMPw6CGBWzi33gDYXhvRtXXKL6zLAxZTpDyb
+✓ Both tick arrays exist
+
+─── Deriving User Token Accounts ───
+User wSOL Account (temp): H3qL79RGN4w7MbfrdC6FAgJWHdS11znd6BCNCvp1g37K
+User Token B Account:     EpsRoUcNSbUkwVVY5y5YquU4k5nfU5JivbypypndyXaA
+User Bond Account:        3GdA6xtanUKCaHQRrV7qCe6qH78Awb3DLFYhBaRYiiMD
+Position Token Account:   4Td4aZpDm1qaKyMKst1A8GyNu8ewR2U6QB3ACaaG8AwT (user's ATA)
+Custody Position ATA:     9tbp7r12Z9Zx398RwardweACiC43kety5r43Tb9R5iEj (custody PDA's ATA)
+
+─── Ensuring Token B ATA Exists ───
+✓ Token B ATA ready: EpsRoUcNSbUkwVVY5y5YquU4k5nfU5JivbypypndyXaA
+  Balance: 18446724073709551615 tokens
+
+─── Preparing Transaction ───
+Sqrt Price Lower:   544745445583857060000
+Sqrt Price Upper:   623103037075042300000
+Sqrt Price Current: 583366240222200398950
+Calculated Liquidity: 495893689
+Expected Amount A:    999999 lamports
+Expected Amount B:    1038221609 tokens
+Position Type:     TWO-SIDED (Both tokens required - price in range)
+SOL Amount:        1209998 lamports ( 0.001209998 SOL)
+Liquidity Amount:  495893689
+Token Max A:       1209998 lamports
+Token Max B:       1245875930 tokens
+User Token B bal:  18446724073709551615
+
+─── Sending Transaction ───
+
+═══════════════════════════════════════════════════════════════
+✗ TRANSACTION FAILED
+═══════════════════════════════════════════════════════════════
+
+Program Logs:
+   Program ComputeBudget111111111111111111111111111111 invoke [1]
+   Program ComputeBudget111111111111111111111111111111 success
+   Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w invoke [1]
+   Program log: Instruction: AddLiquidityAndMintBond
+   Program 11111111111111111111111111111111 invoke [2]
+   Program 11111111111111111111111111111111 success
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]
+   Program log: Instruction: InitializeMint2
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 2828 of 587989 compute units
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+   Program 11111111111111111111111111111111 invoke [2]
+   Program 11111111111111111111111111111111 success
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]
+   Program log: Instruction: InitializeAccount3
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 3158 of 579891 compute units
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+   Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL invoke [2]
+   Program log: Create
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+   Program log: Instruction: GetAccountDataSize
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1622 of 565960 compute units
+   Program return: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA pQAAAAAAAAA=
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+   Program 11111111111111111111111111111111 invoke [3]
+   Program 11111111111111111111111111111111 success
+   Program log: Initialize the associated token account
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+   Program log: Instruction: InitializeImmutableOwner
+   Program log: Please upgrade to SPL Token 2022 for immutable owner support
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1405 of 559428 compute units
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+   Program log: Instruction: InitializeAccount3
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4241 of 555599 compute units
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+   Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 20228 of 571303 compute units
+   Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL success
+   Program 11111111111111111111111111111111 invoke [2]
+   Program 11111111111111111111111111111111 success
+   Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL invoke [2]
+   Program log: Create
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+   Program log: Instruction: GetAccountDataSize
+   Program log: Error: IncorrectProgramId
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 884 of 530156 compute units
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA failed: incorrect program id for instruction
+   Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 6305 of 535577 compute units
+   Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL failed: incorrect program id for instruction
+   Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w consumed 70578 of 599850 compute units
+   Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w failed: incorrect program id for instruction
+
+Error Message: Simulation failed. 
+Message: Transaction simulation failed: Error processing Instruction 1: incorrect program id for instruction. 
+Logs: 
+[
+  "Program log: Create",
+  "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]",
+  "Program log: Instruction: GetAccountDataSize",
+  "Program log: Error: IncorrectProgramId",
+  "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 884 of 530156 compute units",
+  "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA failed: incorrect program id for instruction",
+  "Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 6305 of 535577 compute units",
+  "Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL failed: incorrect program id for instruction",
+  "Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w consumed 70578 of 599850 compute units",
+  "Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w failed: incorrect program id for instruction"
+]. 
+Catch the `SendTransactionError` and call `getLogs()` on it for full details.
+═══════════════════════════════════════════════════════════════
+
+SendTransactionError: Simulation failed. 
+Message: Transaction simulation failed: Error processing Instruction 1: incorrect program id for instruction. 
+Logs: 
+[
+  "Program log: Create",
+  "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]",
+  "Program log: Instruction: GetAccountDataSize",
+  "Program log: Error: IncorrectProgramId",
+  "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 884 of 530156 compute units",
+  "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA failed: incorrect program id for instruction",
+  "Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 6305 of 535577 compute units",
+  "Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL failed: incorrect program id for instruction",
+  "Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w consumed 70578 of 599850 compute units",
+  "Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w failed: incorrect program id for instruction"
+]. 
+Catch the `SendTransactionError` and call `getLogs()` on it for full details.
+    at Connection.sendEncodedTransaction (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/node_modules/@solana/web3.js/src/connection.ts:6053:13)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at Connection.sendRawTransaction (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/node_modules/@solana/web3.js/src/connection.ts:6009:20)
+    at sendAndConfirmRawTransaction (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/node_modules/@coral-xyz/anchor/src/provider.ts:396:25)
+    at AnchorProvider.sendAndConfirm (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/node_modules/@coral-xyz/anchor/src/provider.ts:167:14)
+    at MethodsBuilder.rpc [as _rpcFn] (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/node_modules/@coral-xyz/anchor/src/program/namespace/rpc.ts:29:16)
+    at main (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/scripts/devnet-add-liquidity.ts:562:16) {
+  signature: '',
+  transactionMessage: 'Transaction simulation failed: Error processing Instruction 1: incorrect program id for instruction',
+  transactionLogs: [
+    'Program ComputeBudget111111111111111111111111111111 invoke [1]',
+    'Program ComputeBudget111111111111111111111111111111 success',
+    'Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w invoke [1]',
+    'Program log: Instruction: AddLiquidityAndMintBond',
+    'Program 11111111111111111111111111111111 invoke [2]',
+    'Program 11111111111111111111111111111111 success',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]',
+    'Program log: Instruction: InitializeMint2',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 2828 of 587989 compute units',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success',
+    'Program 11111111111111111111111111111111 invoke [2]',
+    'Program 11111111111111111111111111111111 success',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]',
+    'Program log: Instruction: InitializeAccount3',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 3158 of 579891 compute units',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success',
+    'Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL invoke [2]',
+    'Program log: Create',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]',
+    'Program log: Instruction: GetAccountDataSize',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1622 of 565960 compute units',
+    'Program return: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA pQAAAAAAAAA=',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success',
+    'Program 11111111111111111111111111111111 invoke [3]',
+    'Program 11111111111111111111111111111111 success',
+    'Program log: Initialize the associated token account',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]',
+    'Program log: Instruction: InitializeImmutableOwner',
+    'Program log: Please upgrade to SPL Token 2022 for immutable owner support',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1405 of 559428 compute units',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]',
+    'Program log: Instruction: InitializeAccount3',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4241 of 555599 compute units',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success',
+    'Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 20228 of 571303 compute units',
+    'Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL success',
+    'Program 11111111111111111111111111111111 invoke [2]',
+    'Program 11111111111111111111111111111111 success',
+    'Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL invoke [2]',
+    'Program log: Create',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]',
+    'Program log: Instruction: GetAccountDataSize',
+    'Program log: Error: IncorrectProgramId',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 884 of 530156 compute units',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA failed: incorrect program id for instruction',
+    'Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 6305 of 535577 compute units',
+    'Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL failed: incorrect program id for instruction',
+    'Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w consumed 70578 of 599850 compute units',
+    'Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w failed: incorrect program id for instruction'
+  ],
+  programErrorStack: ProgramErrorStack {
+    stack: [
+      [PublicKey [PublicKey(AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w)]],
+      [PublicKey [PublicKey(ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL)]],
+      [PublicKey [PublicKey(TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA)]]
+    ]
+  }
+}

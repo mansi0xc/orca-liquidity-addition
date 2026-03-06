@@ -1,0 +1,27 @@
+$ anchor deploy
+Deploying cluster: https://api.devnet.solana.com
+Upgrade authority: /Users/mansitibrewal/.config/solana/id.json
+Deploying program "lp_bonds"...
+Program path: /Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/target/deploy/lp_bonds.so...
+Program Id: AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w
+
+Signature: qW8jXnQav1gPgYhDn32GbwdGf8MoDsCh92AMAr4ZLje9mzhab8D41eF3n8M7ksfsgdctnPjXiudoCWXXDY4xjTE
+
+Waiting for program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w to be confirmed...
+Program confirmed on-chain
+Idl data length: 3859 bytes
+Step 0/3859 
+Step 600/3859 
+Step 1200/3859 
+Step 1800/3859 
+Step 2400/3859 
+Step 3000/3859 
+Step 3600/3859 
+Idl account created: 3QiwcZEYBPn1Lw7x2QH8x48QupVDjSQ13g4XebegAemj
+Deploy success
+
+$ solana balance --url devnet
+9.99443484 SOL
+
+$ solana balance
+6.9713826 SOL

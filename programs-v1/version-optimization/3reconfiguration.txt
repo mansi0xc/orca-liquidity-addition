@@ -1,0 +1,30 @@
+yarn run v1.22.22
+$ npx ts-node --project tsconfig.scripts.json scripts/reconfigure-levels.ts
+======================================================================
+RECONFIGURE LEVELS - Fix layer_token_mint = whirlpool token_b
+======================================================================
+
+Admin: FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+Evolution Program: H7ymeEN673X7kKSYXUUoeByZVspALeHbLHzQQFmNVy43
+
+Reconfiguring Level 2:
+  layer_token_mint = token_b: Ci3iuaCJfQAapWHJkfycuTc67SCEZYfKTS8fxjKCP5tB
+  Done: https://explorer.solana.com/tx/17hp3KsxiRVACh9d1rnwWNbSPYuyzzVmajfmNe76bRHAymbxfi32wUpswec7uNs8cteGsHdWAcdZsZpk8JHbwdT?cluster=devnet
+
+Reconfiguring Level 3:
+  layer_token_mint = token_b: 9b7gAMUxGdRwkEk32KtayLXAhwqib3yaTzLdvtMfvXbp
+  Done: https://explorer.solana.com/tx/5qZyg26MrB9QYEUVs4SZLyUGExH2EWdAe39tUjPRMGf8nR3MWPUr3qjpqoJwP65dvJ2bkc6bTGAbn824duFnKZvh?cluster=devnet
+
+Reconfiguring Level 4:
+  layer_token_mint = token_b: 9Zs8kUpicKNZNosFwMawxnVqFZxBfZz8dh2zLu2wahnu
+  Done: https://explorer.solana.com/tx/RmecbNZdVRcQWG6zLhfQYv5XAkQrZHcuLEjJPyfabvdjhVEYMQzJj3PavAv8Vc7RpmTVuCeQCKCusQrEX1r3uFh?cluster=devnet
+
+Verification:
+  Level 2: layerToken=Ci3iuaCJfQAapWHJkfycuTc67SCEZYfKTS8fxjKCP5tB OK
+  Level 3: layerToken=9b7gAMUxGdRwkEk32KtayLXAhwqib3yaTzLdvtMfvXbp OK
+  Level 4: layerToken=9Zs8kUpicKNZNosFwMawxnVqFZxBfZz8dh2zLu2wahnu OK
+
+======================================================================
+RECONFIGURATION COMPLETE
+======================================================================
+Done in 4.79s.

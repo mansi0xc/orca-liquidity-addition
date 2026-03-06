@@ -1,0 +1,192 @@
+$ yarn admin:configure
+yarn run v1.22.22
+$ npx ts-node --project tsconfig.scripts.json scripts/admin-configure.ts
+npm warn Unknown env config "version-git-tag". This will stop working in the next major version of npm.
+npm warn Unknown env config "argv". This will stop working in the next major version of npm.
+npm warn Unknown env config "version-commit-hooks". This will stop working in the next major version of npm.
+npm warn Unknown env config "version-git-message". This will stop working in the next major version of npm.
+npm warn Unknown env config "version-tag-prefix". This will stop working in the next major version of npm.
+======================================================================
+LP BONDS PROTOCOL - ADMIN CONFIGURATION
+======================================================================
+
+Admin wallet:   FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+RPC URL:        https://api.devnet.solana.com
+Admin balance:  2.23220633 SOL
+
+LP Bonds Program ID:   7oFXPveRzDZUHSTxaRquLDn8Z7U3CZYLonyET13Sqaxe
+Evolution Program ID:  H7ymeEN673X7kKSYXUUoeByZVspALeHbLHzQQFmNVy43
+
+--- PDAs ---
+Config PDA:               ED7AxaD1aqyrhLCPDRCC3LwacQ1wRj3WgBXcAr49yZMy
+Bond Authority PDA:       8DYYdv7ycuMwDd3YtdRHRBZQ8h12qADGj5GdDNYWfB44
+Oracle Config PDA:        GPn25VwgLCu8TSK5rDA7HuCkbEsML3GSSpfzxaWo8Uyk
+Evolution Config PDA:     J9UfuWwGaW1ZtJXHWhJ75pL8swJguLQ6yCXngM1HdisZ
+Layer Token Authority PDA: EPgW2uFKqzyFMszSFRqWZSqp36J9tb3gybEiDvKQNonf
+
+----------------------------------------------------------------------
+STEP 1: Initialize LP Bonds Base Protocol
+----------------------------------------------------------------------
+  Done: https://explorer.solana.com/tx/4CREZtneR7dCL4xJ37PajYa5bTfK2XHYFJGq8kHBuC4QazToXAHdjhh4fvuWu83ba8cqMC7wAvgT9zaHQ9sU2RTf?cluster=devnet
+
+----------------------------------------------------------------------
+STEP 2: Initialize Oracle
+----------------------------------------------------------------------
+  Done: https://explorer.solana.com/tx/5JxvAyrweqkxDqtS4Ve6U5qFi8LvfQ4GbCYpc26MUxghRaZNDuY5iELZT7nei1D1F4hMr5ABGJBq9bT1VwbRkvCb?cluster=devnet
+
+----------------------------------------------------------------------
+STEP 3: Initialize Evolution Config
+----------------------------------------------------------------------
+  Done: https://explorer.solana.com/tx/3qYo6WzzyUQTwPNB3BojbVxgGDX6wxhVfuZQdCARSEntdPiBLhhHoMmyswMeLXTyfeGMazhPhNJRFPDi6S4M7gfe?cluster=devnet
+
+----------------------------------------------------------------------
+STEP 4: Initialize Layer Token Authority
+----------------------------------------------------------------------
+  Done: https://explorer.solana.com/tx/REWEpFCBKkBEbzejNbycmr5UFGq8pBTocRumE5DMuk59fYJWS2SdiD2YYzqzaVh9A72R8ReTqvQsxaozqxnvwwu?cluster=devnet
+
+----------------------------------------------------------------------
+STEP 5: Create Layer Token Mints
+----------------------------------------------------------------------
+  Level 2 mint keypair generated: 6cpYCceoCYavGkTgQnqXKNpYAiPTAzvAkmpbEsXbmy6k
+  Level 2 mint created: https://explorer.solana.com/tx/3YNCc9YZKJgvTRfZknpgkDCkb6LLKxxyyXJcc49VaeCfMypQ5EFcrJqZNLMmhEWNVNbA8xfzNJUQZgLtawfo8kB8?cluster=devnet
+  Level 3 mint keypair generated: DL9LE5H2rSiQSZEp7tq5gVthhT8VH25eAHVfgoksoume
+  Level 3 mint created: https://explorer.solana.com/tx/24dcGLVw88rXbWqgr7UrjTM2nmUCdr3n1LsHTqLhJohwtrB5JEzWfbYFASd8oKN3jUDJ1LYh4C4hm5exxA4H3FEr?cluster=devnet
+  Level 4 mint keypair generated: 238Poy7PpiK7Gxhdp2Yd9YwRL2qm6a3ZnAvB44GyjJWR
+  Level 4 mint created: https://explorer.solana.com/tx/2n5jJWo7YriCYE5WR6ACKo8m8Gkmd4Hq2QoQdNXhaDYiUgeVjbb7gDrZRAHH8s6m8S4YWRbkTN6jJJk1jmZ1qD93?cluster=devnet
+
+----------------------------------------------------------------------
+STEP 6: Configure Evolution Levels
+----------------------------------------------------------------------
+
+  Level 2:
+    PDA:         CaGAvMXGCaUsY9Vs8hK8jyrLfa62BYSv3V6QJgD7if3q
+    Whirlpool:   36whP2YDjunT6VNCCPEn1MV9BrZxc5XsD7tAJMVahr1V
+    Token A:     4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2
+    Token B:     Ci3iuaCJfQAapWHJkfycuTc67SCEZYfKTS8fxjKCP5tB
+    Layer Mint:  6cpYCceoCYavGkTgQnqXKNpYAiPTAzvAkmpbEsXbmy6k
+    Fee BPS:     100
+    Lock:        5184000 seconds
+    Multiplier:  150
+    Done: https://explorer.solana.com/tx/3f84s8vAs6KwcT7QmgGDTXmrh2EVZG4EuH5Vv4X3SJn7BcjvPucdC5stfqeDRXC4TaiMTFnDdQ5kRE2ZbXjzjKxf?cluster=devnet
+
+  Level 3:
+    PDA:         2VUKULXTfx52VUPFDvjQr64mDe5T5oMXsixwL1VwVZ8m
+    Whirlpool:   GMNFmkhU8hnCwofqh9gGwW8H6SqohrP8PmoJQAMycNwZ
+    Token A:     4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2
+    Token B:     9b7gAMUxGdRwkEk32KtayLXAhwqib3yaTzLdvtMfvXbp
+    Layer Mint:  DL9LE5H2rSiQSZEp7tq5gVthhT8VH25eAHVfgoksoume
+    Fee BPS:     150
+    Lock:        7776000 seconds
+    Multiplier:  200
+    Done: https://explorer.solana.com/tx/3jiZh2e2rXrKiACuPJC8eC84CQwp2QMMXAAcpV4pdteZmY1YkmJgFcREDWNcNNAZ1R4rSHyrKwZy3vB3zYLzjxcY?cluster=devnet
+
+  Level 4:
+    PDA:         FyU1HhGxNk6afJMecfugdjKoUPmZQZuHbVL9CK5wHhmt
+    Whirlpool:   2bdPMRcKrgAvQKGfP1mW9ThNjq6rnP2nRSYmWodtdFvo
+    Token A:     4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2
+    Token B:     9Zs8kUpicKNZNosFwMawxnVqFZxBfZz8dh2zLu2wahnu
+    Layer Mint:  238Poy7PpiK7Gxhdp2Yd9YwRL2qm6a3ZnAvB44GyjJWR
+    Fee BPS:     200
+    Lock:        10368000 seconds
+    Multiplier:  300
+    Done: https://explorer.solana.com/tx/2XUr35dMLC8Afd7MKmMEWkEJiAM8rtNvf5k7dTygVbWKuKG1mf41tBb7giE5nMQVyaZsqitfbFbw3atmWLXU9gCY?cluster=devnet
+
+----------------------------------------------------------------------
+STEP 7: Verification
+----------------------------------------------------------------------
+
+  LP Bonds ProtocolConfig:
+    admin:                FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+    allowlistedWhirlpool: 8gbgyrnZJKiiUT29SJJ3VeJ7x7zHy11exABgD3omwVmN
+    tokenMintA:           So11111111111111111111111111111111111111112
+    tokenMintB:           4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2
+    lockDuration:         2592000
+    bondCounter:          0
+    isPaused:             false
+
+  Evolution Config:
+    admin:                FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+    treasury:             FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+    oracleAuthority:      FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+    lpBondsProgramId:     7oFXPveRzDZUHSTxaRquLDn8Z7U3CZYLonyET13Sqaxe
+    isPaused:             false
+    evolutionCounter:     0
+
+  Level 2 Config:
+    whirlpool:    36whP2YDjunT6VNCCPEn1MV9BrZxc5XsD7tAJMVahr1V
+    tokenMintA:   4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2
+    tokenMintB:   Ci3iuaCJfQAapWHJkfycuTc67SCEZYfKTS8fxjKCP5tB
+    layerToken:   6cpYCceoCYavGkTgQnqXKNpYAiPTAzvAkmpbEsXbmy6k
+    reqAmountA:   2000000000
+    reqAmountB:   1000000000
+    feeBps:       100
+    lockDuration: 5184000
+    multiplier:   150
+    isActive:     true
+
+  Level 3 Config:
+    whirlpool:    GMNFmkhU8hnCwofqh9gGwW8H6SqohrP8PmoJQAMycNwZ
+    tokenMintA:   4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2
+    tokenMintB:   9b7gAMUxGdRwkEk32KtayLXAhwqib3yaTzLdvtMfvXbp
+    layerToken:   DL9LE5H2rSiQSZEp7tq5gVthhT8VH25eAHVfgoksoume
+    reqAmountA:   3000000000
+    reqAmountB:   1500000000
+    feeBps:       150
+    lockDuration: 7776000
+    multiplier:   200
+    isActive:     true
+
+  Level 4 Config:
+    whirlpool:    2bdPMRcKrgAvQKGfP1mW9ThNjq6rnP2nRSYmWodtdFvo
+    tokenMintA:   4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2
+    tokenMintB:   9Zs8kUpicKNZNosFwMawxnVqFZxBfZz8dh2zLu2wahnu
+    layerToken:   238Poy7PpiK7Gxhdp2Yd9YwRL2qm6a3ZnAvB44GyjJWR
+    reqAmountA:   4000000000
+    reqAmountB:   2000000000
+    feeBps:       200
+    lockDuration: 10368000
+    multiplier:   300
+    isActive:     true
+
+======================================================================
+CONFIGURATION COMPLETE
+======================================================================
+
+Program IDs:
+  LP Bonds:    7oFXPveRzDZUHSTxaRquLDn8Z7U3CZYLonyET13Sqaxe
+  Evolution:   H7ymeEN673X7kKSYXUUoeByZVspALeHbLHzQQFmNVy43
+
+Admin:         FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+
+PDAs:
+  Config:             ED7AxaD1aqyrhLCPDRCC3LwacQ1wRj3WgBXcAr49yZMy
+  Bond Authority:     8DYYdv7ycuMwDd3YtdRHRBZQ8h12qADGj5GdDNYWfB44
+  Oracle Config:      GPn25VwgLCu8TSK5rDA7HuCkbEsML3GSSpfzxaWo8Uyk
+  Evolution Config:   J9UfuWwGaW1ZtJXHWhJ75pL8swJguLQ6yCXngM1HdisZ
+  Layer Token Auth:   EPgW2uFKqzyFMszSFRqWZSqp36J9tb3gybEiDvKQNonf
+
+Layer Token Mints:
+  Level 2: 6cpYCceoCYavGkTgQnqXKNpYAiPTAzvAkmpbEsXbmy6k
+  Level 3: DL9LE5H2rSiQSZEp7tq5gVthhT8VH25eAHVfgoksoume
+  Level 4: 238Poy7PpiK7Gxhdp2Yd9YwRL2qm6a3ZnAvB44GyjJWR
+
+Transaction Log:
+  Initialize LP Bonds: 4CREZtneR7dCL4xJ37PajYa5bTfK2XHYFJGq8kHBuC4QazToXAHdjhh4fvuWu83ba8cqMC7wAvgT9zaHQ9sU2RTf
+  Initialize Oracle: 5JxvAyrweqkxDqtS4Ve6U5qFi8LvfQ4GbCYpc26MUxghRaZNDuY5iELZT7nei1D1F4hMr5ABGJBq9bT1VwbRkvCb
+  Initialize Evolution: 3qYo6WzzyUQTwPNB3BojbVxgGDX6wxhVfuZQdCARSEntdPiBLhhHoMmyswMeLXTyfeGMazhPhNJRFPDi6S4M7gfe
+  Initialize Layer Token Authority: REWEpFCBKkBEbzejNbycmr5UFGq8pBTocRumE5DMuk59fYJWS2SdiD2YYzqzaVh9A72R8ReTqvQsxaozqxnvwwu
+  Create Layer Token Mint L2: 3YNCc9YZKJgvTRfZknpgkDCkb6LLKxxyyXJcc49VaeCfMypQ5EFcrJqZNLMmhEWNVNbA8xfzNJUQZgLtawfo8kB8
+  Create Layer Token Mint L3: 24dcGLVw88rXbWqgr7UrjTM2nmUCdr3n1LsHTqLhJohwtrB5JEzWfbYFASd8oKN3jUDJ1LYh4C4hm5exxA4H3FEr
+  Create Layer Token Mint L4: 2n5jJWo7YriCYE5WR6ACKo8m8Gkmd4Hq2QoQdNXhaDYiUgeVjbb7gDrZRAHH8s6m8S4YWRbkTN6jJJk1jmZ1qD93
+  Configure Level 2: 3f84s8vAs6KwcT7QmgGDTXmrh2EVZG4EuH5Vv4X3SJn7BcjvPucdC5stfqeDRXC4TaiMTFnDdQ5kRE2ZbXjzjKxf
+  Configure Level 3: 3jiZh2e2rXrKiACuPJC8eC84CQwp2QMMXAAcpV4pdteZmY1YkmJgFcREDWNcNNAZ1R4rSHyrKwZy3vB3zYLzjxcY
+  Configure Level 4: 2XUr35dMLC8Afd7MKmMEWkEJiAM8rtNvf5k7dTygVbWKuKG1mf41tBb7giE5nMQVyaZsqitfbFbw3atmWLXU9gCY
+
+All 10 transactions confirmed.
+======================================================================
+npm notice
+npm notice New minor version of npm available! 11.6.2 -> 11.11.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.11.0
+npm notice To update run: npm install -g npm@11.11.0
+npm notice
+✨  Done in 11.68s.
