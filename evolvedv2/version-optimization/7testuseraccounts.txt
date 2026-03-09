@@ -1,0 +1,19 @@
+$ spl-token accounts --owner C4zcbhFv2sHWnx8oatKzwXuMU9nAJWyunnDogoxfJtpn
+Token                                         Balance        
+-------------------------------------------------------------
+mZMLqtZaQxZDBZhFkYFX1c7o33Dnzzhm4Kmps1DiBvx   1              
+36yqt5afsbgUV1dkVXqsqAmeYaYJMnCAQo8RWvuLmVwV  0              
+3QBGysYekvxNvTXBQ6Wr8iW6qNtU7bV2kjDA1Gu2xCZz  1              
+3uiVWVJ116HPuJXkNASrzmrwzrpfz88CBtKWDDtxcu8a  0              
+4RsV854V3kSmWAP2TkqAYpKQHLtgV8yWk9qDbBhyysNs  0              
+4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2  19990.999991624
+5ojYWXqfGBW6AA9f7pScjmrhoFwF7a1NvRGYnkr6opYR  0              
+7TAmVhQ8zgNsHyAugEqFM6ej2CD86JnCY4t5v58HxyTV  0              
+933ubtrucsxYURy8UgQkvTL4JHhETv2sjW89eggMvkUa  0              
+BJUhHjBKPuXkP1NNJdKPDDG4HGzo9c5PWSpZDBvheco7  1              
+BabhCBxNVYGUnCVeu16GFnWZrpaZdDnzVKhgBcPs9E1m  0              
+Ci3iuaCJfQAapWHJkfycuTc67SCEZYfKTS8fxjKCP5tB  0              
+DCvrUgu4qCKzMz87oySbRULMZxjbi4Pf2G2kwDrzt3Mn  0              
+EFmnFVDTBSxHPzFDabfoj35FVbbjAGrFcL59Rgh84Dvw  1              
+EqTt3XAJkLYTYMG3HPiryAqwyG9FysDxtZMQKhzM97nL  0              
+F7WyqoMHLCyePC2yJt7TuHJegpGFjbtAasm84sWD1rCJ  0 

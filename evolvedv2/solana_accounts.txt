@@ -1,0 +1,18 @@
+$ spl-token accounts
+Token                                         Balance              
+-------------------------------------------------------------------
+GNR37N9DKJirQfRXdbhi2ZodZuFEQPfvjnMhFUPKBWk   0                    
+4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2  18446724054.472335501
+5uJU3kAeet4ugqobSARycPdvmjgZpJE4nqDqXPDU1uJB  0                    
+6hvsPwxy2R2AV5D6YQbPugj9iHzRsdE5TADwMLreBf3a  0                    
+7z6bxUjkMM3G6DStPD1cUeanJWbwYodVVsM1frEor86p  1                    
+8KBVnv5BjycNxN6EQ1HtsiJy7NqPx95AQUvqvRhaBGsN  1                    
+9Zs8kUpicKNZNosFwMawxnVqFZxBfZz8dh2zLu2wahnu  18446684071.709551615
+9b7gAMUxGdRwkEk32KtayLXAhwqib3yaTzLdvtMfvXbp  18446704072.209551615
+BYTQMdXqdz8GUYBkGZ98z2pE38uxmtfWdKi4BPZHF44f  0                    
+CL9ZgeuW3NVostFQoSJRGT4zDFtysLLnPj34doYvzDZz  0                    
+Ci3iuaCJfQAapWHJkfycuTc67SCEZYfKTS8fxjKCP5tB  18446724072.709551615
+EMi9tbQ7ppiUsgPL1ioQxKb3v3iCJa8pfNCCnJ8fjGHF  0                    
+EbUt5Z1TiMZRTjogooLgoSHJswMy75RyV1VDy2SYa9D6  0                    
+HW1RefuGbo7Noz7utMaYG5bByA7siVCoirFYoXpHtS4j  0                    
+HubCBHBniuPJzrNL3eHQqLMtLs2CWXg35gwwbWsAinFX  0   

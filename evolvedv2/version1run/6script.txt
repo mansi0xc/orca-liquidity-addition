@@ -1,0 +1,308 @@
+$  npx ts-node scripts/devnet-add-liquidity.ts 2>&1
+═══════════════════════════════════════════════════════════════
+LP BONDS PROTOCOL - DEVNET LIQUIDITY ADDITION
+═══════════════════════════════════════════════════════════════
+
+Network:    devnet
+Program ID: AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w
+Whirlpool:  8gbgyrnZJKiiUT29SJJ3VeJ7x7zHy11exABgD3omwVmN
+User:       FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+
+User SOL Balance: 6.95945308 SOL
+
+─── Fetching Whirlpool Data ───
+Token Mint A (wSOL): So11111111111111111111111111111111111111112
+Token Mint B:        4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2
+Token Vault A:       4E34XMs7rHQWsgavf9gHYzr9nSHnQM6vtbj9joNSNKDg
+Token Vault B:       2Pj7bSBJS47fjxRYNhTSMuQyYDon5Drr4GFioo9HqA8y
+Tick Spacing:        128
+Current Tick:        69082
+Liquidity:           31624347484
+
+─── Deriving PDAs ───
+Config PDA:         458we97Eh6ESEvEsfwBBSSRwLhtptjvr8mhrZYsrtd4W
+Bond Authority PDA: hitpB76esmaXFSUUP92iGcsL3rwhjy8VLLcBGxj7ZyN
+✓ Protocol already initialized
+
+─── Generating Keypairs ───
+Bond Mint:      H2exbHjA4TC5SosKeCb77Qeoz9hNLPxn9ZgiWxpyttQi
+Position Mint:  9bMUnsQkZeXwYr37PYUu2VKmor88WzWrnNnGjPV9jKi9
+Position Custody PDA: 2XLFwBtgsAwNT1MD7Lh5zCcZsqnSNiWPDdVVwSxQLwhR
+Bond Metadata PDA:    31sum1aVMN8XX2r1uQXF7WAMWZx6NzYqwtzCMBiRXj6g
+Whirlpool Position:   Ddhqmv2NMENQxiUyDd46YgQTQkfn1UUbABGQjf3PZ8Zx
+
+─── Calculating Tick Range ───
+Tick Lower Index: 67712
+Tick Upper Index: 70400
+Current Tick:     69082
+Tick Array Lower: 7ZHbNczxoMPw6CGBWzi33gDYXhvRtXXKL6zLAxZTpDyb
+Tick Array Upper: 7ZHbNczxoMPw6CGBWzi33gDYXhvRtXXKL6zLAxZTpDyb
+✓ Both tick arrays exist
+
+─── Deriving User Token Accounts ───
+User wSOL Account (temp): HB3nzCenhdh4qcCaJ8LcX3fEsGYQT1zr7SkzA5rEtZKj
+User Token B Account:     EpsRoUcNSbUkwVVY5y5YquU4k5nfU5JivbypypndyXaA
+User Bond Account:        Gx27JKR1ikogh1rUHJvdQNeGt1YePNeMEKX6LRUkbagx
+Position Token Account:   5Ra9Gg42yWxcMQ3EYZV6Q9A7yeAZrRYGPrdnG7MXMsso
+
+─── Ensuring Token B ATA Exists ───
+✓ Token B ATA ready: EpsRoUcNSbUkwVVY5y5YquU4k5nfU5JivbypypndyXaA
+  Balance: 18446724073709551615 tokens
+
+─── Preparing Transaction ───
+Position Type:     TWO-SIDED (Both tokens required - price in range)
+SOL Amount:        10000000 lamports ( 0.01 SOL)
+Liquidity Amount:  100000
+Token Max A:       10000000 lamports
+Token Max B:       1000000000 tokens
+User Token B bal:  18446724073709551615
+Bond Name:         B
+
+─── Sending Transaction ───
+
+═══════════════════════════════════════════════════════════════
+✗ TRANSACTION FAILED
+═══════════════════════════════════════════════════════════════
+
+Program Logs:
+   Program ComputeBudget111111111111111111111111111111 invoke [1]
+   Program ComputeBudget111111111111111111111111111111 success
+   Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w invoke [1]
+   Program log: Instruction: AddLiquidityAndMintBond
+   Program 11111111111111111111111111111111 invoke [2]
+   Program 11111111111111111111111111111111 success
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]
+   Program log: Instruction: InitializeMint2
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 2828 of 587295 compute units
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+   Program 11111111111111111111111111111111 invoke [2]
+   Program 11111111111111111111111111111111 success
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]
+   Program log: Instruction: InitializeAccount3
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 3158 of 579197 compute units
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+   Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL invoke [2]
+   Program log: Create
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+   Program log: Instruction: GetAccountDataSize
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1622 of 565266 compute units
+   Program return: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA pQAAAAAAAAA=
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+   Program 11111111111111111111111111111111 invoke [3]
+   Program 11111111111111111111111111111111 success
+   Program log: Initialize the associated token account
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+   Program log: Instruction: InitializeImmutableOwner
+   Program log: Please upgrade to SPL Token 2022 for immutable owner support
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1405 of 558734 compute units
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+   Program log: Instruction: InitializeAccount3
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4241 of 554905 compute units
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+   Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 20228 of 570609 compute units
+   Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL success
+   Program 11111111111111111111111111111111 invoke [2]
+   Program 11111111111111111111111111111111 success
+   Program 11111111111111111111111111111111 invoke [2]
+   Program 11111111111111111111111111111111 success
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]
+   Program log: Instruction: SyncNative
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 3045 of 531216 compute units
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+   Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc invoke [2]
+   Program log: Instruction: OpenPosition
+   Program 11111111111111111111111111111111 invoke [3]
+   Program 11111111111111111111111111111111 success
+   Program 11111111111111111111111111111111 invoke [3]
+   Program 11111111111111111111111111111111 success
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+   Program log: Instruction: InitializeMint2
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 2780 of 500918 compute units
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+   Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL invoke [3]
+   Program log: Create
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [4]
+   Program log: Instruction: GetAccountDataSize
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1595 of 475085 compute units
+   Program return: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA pQAAAAAAAAA=
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+   Program 11111111111111111111111111111111 invoke [4]
+   Program 11111111111111111111111111111111 success
+   Program log: Initialize the associated token account
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [4]
+   Program log: Instruction: InitializeImmutableOwner
+   Program log: Please upgrade to SPL Token 2022 for immutable owner support
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1405 of 468580 compute units
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [4]
+   Program log: Instruction: InitializeAccount3
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4214 of 464749 compute units
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+   Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 26275 of 486506 compute units
+   Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL success
+   Program 11111111111111111111111111111111 invoke [3]
+   Program 11111111111111111111111111111111 success
+   Program data: 7a/z5pN1ZXlyJq7xhWu6Sm4j2H8Dy48ovH0laeAqS4TdGhO7SojhbbuzVMwJEWjHcU9fN0qiJnYMJQ+ZE89jFsOjwW2AlMaTgAgBAAATAQA=
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+   Program log: Instruction: MintTo
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4575 of 453248 compute units
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+   Program log: Instruction: SetAuthority
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 2994 of 446532 compute units
+   Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+   Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc consumed 75560 of 517862 compute units
+   Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc success
+   Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc invoke [2]
+   Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc consumed 991 of 438211 compute units
+   Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc failed: custom program error: 0x1783
+   Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w consumed 162630 of 599850 compute units
+   Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w failed: custom program error: 0x1783
+
+Error Message: Simulation failed. 
+Message: Transaction simulation failed: Error processing Instruction 1: custom program error: 0x1783. 
+Logs: 
+[
+  "Program log: Instruction: SetAuthority",
+  "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 2994 of 446532 compute units",
+  "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+  "Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc consumed 75560 of 517862 compute units",
+  "Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc success",
+  "Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc invoke [2]",
+  "Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc consumed 991 of 438211 compute units",
+  "Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc failed: custom program error: 0x1783",
+  "Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w consumed 162630 of 599850 compute units",
+  "Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w failed: custom program error: 0x1783"
+]. 
+Catch the `SendTransactionError` and call `getLogs()` on it for full details.
+═══════════════════════════════════════════════════════════════
+
+SendTransactionError: Simulation failed. 
+Message: Transaction simulation failed: Error processing Instruction 1: custom program error: 0x1783. 
+Logs: 
+[
+  "Program log: Instruction: SetAuthority",
+  "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 2994 of 446532 compute units",
+  "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+  "Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc consumed 75560 of 517862 compute units",
+  "Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc success",
+  "Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc invoke [2]",
+  "Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc consumed 991 of 438211 compute units",
+  "Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc failed: custom program error: 0x1783",
+  "Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w consumed 162630 of 599850 compute units",
+  "Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w failed: custom program error: 0x1783"
+]. 
+Catch the `SendTransactionError` and call `getLogs()` on it for full details.
+    at Connection.sendEncodedTransaction (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/node_modules/@solana/web3.js/src/connection.ts:6053:13)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at Connection.sendRawTransaction (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/node_modules/@solana/web3.js/src/connection.ts:6009:20)
+    at sendAndConfirmRawTransaction (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/node_modules/@coral-xyz/anchor/src/provider.ts:396:25)
+    at AnchorProvider.sendAndConfirm (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/node_modules/@coral-xyz/anchor/src/provider.ts:167:14)
+    at MethodsBuilder.rpc [as _rpcFn] (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/node_modules/@coral-xyz/anchor/src/program/namespace/rpc.ts:29:16)
+    at main (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/scripts/devnet-add-liquidity.ts:497:16) {
+  signature: '',
+  transactionMessage: 'Transaction simulation failed: Error processing Instruction 1: custom program error: 0x1783',
+  transactionLogs: [
+    'Program ComputeBudget111111111111111111111111111111 invoke [1]',
+    'Program ComputeBudget111111111111111111111111111111 success',
+    'Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w invoke [1]',
+    'Program log: Instruction: AddLiquidityAndMintBond',
+    'Program 11111111111111111111111111111111 invoke [2]',
+    'Program 11111111111111111111111111111111 success',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]',
+    'Program log: Instruction: InitializeMint2',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 2828 of 587295 compute units',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success',
+    'Program 11111111111111111111111111111111 invoke [2]',
+    'Program 11111111111111111111111111111111 success',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]',
+    'Program log: Instruction: InitializeAccount3',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 3158 of 579197 compute units',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success',
+    'Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL invoke [2]',
+    'Program log: Create',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]',
+    'Program log: Instruction: GetAccountDataSize',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1622 of 565266 compute units',
+    'Program return: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA pQAAAAAAAAA=',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success',
+    'Program 11111111111111111111111111111111 invoke [3]',
+    'Program 11111111111111111111111111111111 success',
+    'Program log: Initialize the associated token account',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]',
+    'Program log: Instruction: InitializeImmutableOwner',
+    'Program log: Please upgrade to SPL Token 2022 for immutable owner support',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1405 of 558734 compute units',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]',
+    'Program log: Instruction: InitializeAccount3',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4241 of 554905 compute units',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success',
+    'Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 20228 of 570609 compute units',
+    'Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL success',
+    'Program 11111111111111111111111111111111 invoke [2]',
+    'Program 11111111111111111111111111111111 success',
+    'Program 11111111111111111111111111111111 invoke [2]',
+    'Program 11111111111111111111111111111111 success',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]',
+    'Program log: Instruction: SyncNative',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 3045 of 531216 compute units',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success',
+    'Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc invoke [2]',
+    'Program log: Instruction: OpenPosition',
+    'Program 11111111111111111111111111111111 invoke [3]',
+    'Program 11111111111111111111111111111111 success',
+    'Program 11111111111111111111111111111111 invoke [3]',
+    'Program 11111111111111111111111111111111 success',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]',
+    'Program log: Instruction: InitializeMint2',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 2780 of 500918 compute units',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success',
+    'Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL invoke [3]',
+    'Program log: Create',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [4]',
+    'Program log: Instruction: GetAccountDataSize',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1595 of 475085 compute units',
+    'Program return: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA pQAAAAAAAAA=',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success',
+    'Program 11111111111111111111111111111111 invoke [4]',
+    'Program 11111111111111111111111111111111 success',
+    'Program log: Initialize the associated token account',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [4]',
+    'Program log: Instruction: InitializeImmutableOwner',
+    'Program log: Please upgrade to SPL Token 2022 for immutable owner support',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1405 of 468580 compute units',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [4]',
+    'Program log: Instruction: InitializeAccount3',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4214 of 464749 compute units',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success',
+    'Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 26275 of 486506 compute units',
+    'Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL success',
+    'Program 11111111111111111111111111111111 invoke [3]',
+    'Program 11111111111111111111111111111111 success',
+    'Program data: 7a/z5pN1ZXlyJq7xhWu6Sm4j2H8Dy48ovH0laeAqS4TdGhO7SojhbbuzVMwJEWjHcU9fN0qiJnYMJQ+ZE89jFsOjwW2AlMaTgAgBAAATAQA=',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]',
+    'Program log: Instruction: MintTo',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4575 of 453248 compute units',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]',
+    'Program log: Instruction: SetAuthority',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 2994 of 446532 compute units',
+    'Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success',
+    'Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc consumed 75560 of 517862 compute units',
+    'Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc success',
+    'Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc invoke [2]',
+    'Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc consumed 991 of 438211 compute units',
+    'Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc failed: custom program error: 0x1783',
+    'Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w consumed 162630 of 599850 compute units',
+    'Program AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w failed: custom program error: 0x1783'
+  ],
+  programErrorStack: ProgramErrorStack {
+    stack: [
+      [PublicKey [PublicKey(AmJcNFdgckd1o6DPa6j12WGM6wNKZdvdWphtsP2Ws92w)]],
+      [PublicKey [PublicKey(whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc)]]
+    ]
+  }
+}

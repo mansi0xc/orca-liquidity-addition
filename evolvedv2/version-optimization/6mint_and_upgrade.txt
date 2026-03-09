@@ -1,0 +1,119 @@
+$ cd /Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts && npx ts-node --project tsconfig.scripts.json scripts/user-test.ts run 2>&1
+======================================================================
+LP BONDS - USER TEST FLOW
+======================================================================
+
+Test user:   C4zcbhFv2sHWnx8oatKzwXuMU9nAJWyunnDogoxfJtpn
+Admin/Oracle: FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+User balance: 9.929883391 SOL
+LP Bonds:    7oFXPveRzDZUHSTxaRquLDn8Z7U3CZYLonyET13Sqaxe
+Evolution:   H7ymeEN673X7kKSYXUUoeByZVspALeHbLHzQQFmNVy43
+
+L1 Whirlpool: 8gbgyrnZJKiiUT29SJJ3VeJ7x7zHy11exABgD3omwVmN
+L1 Token B:   4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2
+
+----------------------------------------------------------------------
+TEST 1: Initialize Nonce Accounts
+----------------------------------------------------------------------
+  Base nonce already initialized.
+  Evolution nonce already initialized.
+
+----------------------------------------------------------------------
+TEST 2: Mint Level 1 Bond
+----------------------------------------------------------------------
+  Whirlpool vault A: 4E34XMs7rHQWsgavf9gHYzr9nSHnQM6vtbj9joNSNKDg
+  Whirlpool vault B: 2Pj7bSBJS47fjxRYNhTSMuQyYDon5Drr4GFioo9HqA8y
+  Tick spacing:      128
+  Current tick:      69082
+  Tick range:        67712 to 70400
+  Bond mint:         4RsV854V3kSmWAP2TkqAYpKQHLtgV8yWk9qDbBhyysNs
+  SOL amount:        10000000 lamports
+  Level 1 bond minted: https://explorer.solana.com/tx/5ZiBMhhp8Qf4MqXW5aZdNjcfsdNN2Axpn5hxm2LQRRx1bMZ7QiQ1SKqmj7W7ZSeqLUBi4SkFDGGfs7nx6VwzLxxA?cluster=devnet
+  Bond NFT mint:       4RsV854V3kSmWAP2TkqAYpKQHLtgV8yWk9qDbBhyysNs
+  Bond balance:        1
+  Custody level:       1
+  Custody depositor:   C4zcbhFv2sHWnx8oatKzwXuMU9nAJWyunnDogoxfJtpn
+
+----------------------------------------------------------------------
+TEST 3: Evolve to Level 2
+----------------------------------------------------------------------
+  Whirlpool:     36whP2YDjunT6VNCCPEn1MV9BrZxc5XsD7tAJMVahr1V
+  Token A:       4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2
+  Layer Token:   Ci3iuaCJfQAapWHJkfycuTc67SCEZYfKTS8fxjKCP5tB
+  Required A:    2000000000
+  Required B:    1000000000
+  Tick lower:     -77312
+  Tick upper:     -74624
+  Tick array (L): 2oAFLgpqpt1TaTSEH6R22UEgH6WNccMKd2PyQmkDSw5x
+  Tick array (U): 2oAFLgpqpt1TaTSEH6R22UEgH6WNccMKd2PyQmkDSw5x
+  Tick arrays:    VERIFIED
+  ALT created: 4au9Y37FsXCDiyc9nSkNZeaNL3BfndenhNKCeJYxLAZC
+  Waiting for ALT activation (5s)...
+  Simulating...
+  Evolved to Level 2: https://explorer.solana.com/tx/5dCBH8EhVKKEmNyjG87h3yQR7VXqGiHMerCrxL2LGD3rbdF8gwagQZwM5yxEZRKMwtAnt7eGVzGi3SZGXGozqS56?cluster=devnet
+  New bond mint:     3uiVWVJ116HPuJXkNASrzmrwzrpfz88CBtKWDDtxcu8a
+  Target bond balance: 1
+  Custody level:      2
+  Custody evolved:    true
+  Evolved from:       4RsV854V3kSmWAP2TkqAYpKQHLtgV8yWk9qDbBhyysNs
+
+----------------------------------------------------------------------
+TEST 4: Evolve to Level 3
+----------------------------------------------------------------------
+  Whirlpool:     GMNFmkhU8hnCwofqh9gGwW8H6SqohrP8PmoJQAMycNwZ
+  Token A:       4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2
+  Layer Token:   9b7gAMUxGdRwkEk32KtayLXAhwqib3yaTzLdvtMfvXbp
+  Required A:    3000000000
+  Required B:    1500000000
+  Tick lower:     -84352
+  Tick upper:     -81664
+  Tick array (L): R56abHQr4ZW1XCRhiau16fJozDYYZ6Cyn7PxB6cmHhT
+  Tick array (U): R56abHQr4ZW1XCRhiau16fJozDYYZ6Cyn7PxB6cmHhT
+  Tick arrays:    VERIFIED
+  ALT created: 4RBnGCjF4LPihCgKEJfVgZkx2Y2tXYXbmq8VhWtpvv5E
+  Waiting for ALT activation (5s)...
+  Simulating...
+  Evolved to Level 3: https://explorer.solana.com/tx/7SnBAaRat3W1zrPPDVjLASqQxCnzgbMFWiEctWqc9J2otF41MKNuG9VkXXWugKHYnWQ3wEj1EvnZP2JCeZW8fEP?cluster=devnet
+  New bond mint:     EqTt3XAJkLYTYMG3HPiryAqwyG9FysDxtZMQKhzM97nL
+  Target bond balance: 1
+  Custody level:      3
+  Custody evolved:    true
+  Evolved from:       3uiVWVJ116HPuJXkNASrzmrwzrpfz88CBtKWDDtxcu8a
+
+----------------------------------------------------------------------
+TEST 5: Evolve to Level 4
+----------------------------------------------------------------------
+  Whirlpool:     2bdPMRcKrgAvQKGfP1mW9ThNjq6rnP2nRSYmWodtdFvo
+  Token A:       4qbX8Mtx8XNt6DeCL414z67Dj9DJircMoSNEuX18AMB2
+  Layer Token:   9Zs8kUpicKNZNosFwMawxnVqFZxBfZz8dh2zLu2wahnu
+  Required A:    4000000000
+  Required B:    2000000000
+  Tick lower:     -91264
+  Tick upper:     -88576
+  Tick array (L): CZzsfX6Fqro7xgZhMg6xzcWVEnBqQnMvbECUeXqk9WTW
+  Tick array (U): 48RDrUQ3Czisx3y4kn28iimq8Umkj8kVkZBKuuStwrp4
+  Tick arrays:    VERIFIED
+  ALT created: EF4fzxDkzvHed3EnQrX5xBZe2kZvsGAJYhbHkffRYGmh
+  Waiting for ALT activation (5s)...
+  Simulating...
+  Evolved to Level 4: https://explorer.solana.com/tx/5xmM2spiQ93TPDubQ2RdRnD6EMXsjhrG4mNR4wGuwR1f3qKogbHYgWo2WUAQFFVvNweLoAcfLNNBYhxGjv91AREE?cluster=devnet
+  New bond mint:     EFmnFVDTBSxHPzFDabfoj35FVbbjAGrFcL59Rgh84Dvw
+  Target bond balance: 1
+  Custody level:      4
+  Custody evolved:    true
+  Evolved from:       EqTt3XAJkLYTYMG3HPiryAqwyG9FysDxtZMQKhzM97nL
+
+======================================================================
+FINAL VERIFICATION
+======================================================================
+
+Final bond (Level 4): EFmnFVDTBSxHPzFDabfoj35FVbbjAGrFcL59Rgh84Dvw
+Balance:              1
+Level:                4
+Is evolved:           true
+Depositor:            C4zcbhFv2sHWnx8oatKzwXuMU9nAJWyunnDogoxfJtpn
+Evolution counter:    3
+
+======================================================================
+ALL TESTS PASSED
+======================================================================
