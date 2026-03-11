@@ -17,14 +17,28 @@
 5. Frontend deployment pipeline (Vercel/similar) is already set up
 6. All engineers can work full days during the 14-day window
 
+## Scope Adjustments (Applied)
+
+**Removed from scope:**
+- General API (`evm-apis/general`) Solana integration — deferred to Phase 2
+- Launchpad Webapp frontend — deferred to Phase 2
+- Launchpad collection creation UI
+- Launchpad mint UI
+- Launchpad refund UI
+
+**Focused scope:**
+- LP Bonds API, Solana Order Book, NFT Indexer, Volume Indexer
+- Metadata Indexer (if required), Rewards Service, User API (minimal)
+- LP Bonds Webapp multi-chain integration
+
 ## Team Allocation
 
 | Engineer | Primary Focus | Secondary |
 |----------|--------------|-----------|
-| **E1 (Backend Senior)** | LP Bonds API refactoring, Rewards Service | User API, General API |
-| **E2 (Backend)** | Solana Order Book (new service) | General API support |
+| **E1 (Backend Senior)** | LP Bonds API refactoring, Rewards Service | User API (minimal) |
+| **E2 (Backend)** | Solana Order Book (new service) | Order Book integration |
 | **E3 (Indexer/Backend)** | NFT Indexer, Volume Indexer, Metadata Indexer | Monitoring |
-| **E4 (Frontend)** | Wallet integration, transaction builders, UI | Launchpad frontend |
+| **E4 (Frontend)** | LP Bonds Webapp wallet integration, transaction builders, UI | Chain selector, portfolio |
 
 ---
 
@@ -86,14 +100,12 @@ E1 — User API (`evm-apis/user`):
 - Ensure User model address column supports VARCHAR(44) (widen if currently VARCHAR(42))
 - Test all user endpoints (`/user/profile`, `/user/portfolio`, `/collection/bids`) with Solana addresses
 
-E2 — General API (`evm-apis/general`):
-- Add `solana` chain routing in order submission proxy (when `blockchain === 'solana'`, route to Solana order-book URL instead of EVM order-book)
-- Integrate Jupiter Price API (`https://price.jup.ag/v6/price`) for SPL token pricing alongside CoinGecko
-- Add SOL to the CoinGecko price cache (already fetches ETH — add SOL ID)
-- Replace `ethers.utils.isAddress` with chain-aware validation
-- Add Solana NFT data source: integrate Helius DAS API (`getAssetsByGroup`, `getAsset`) as alternative to NFTGo/Reservoir when `chain === 'solana'`
-- Update stats queries to include Solana tables when chain header is `solana`
-- Test NFT listing, collection stats, and order proxy endpoints with Solana data
+~~E2 — General API: REMOVED FROM SCOPE (deferred to Phase 2)~~
+
+E2 — Solana Order Book foundation (moved up from Day 3):
+- Initialize project: Express + TypeScript, `@solana/web3.js`, `tweetnacl`, Sequelize, `pg`
+- Create order model matching `SolanaOrders` table schema
+- Define canonical order message format (byte layout)
 
 E3 — Continue indexer infrastructure (parallel):
 - Scaffold `solana-nft-indexer` project: Express + TypeScript, `@solana/web3.js`, Sequelize, Helius SDK
@@ -108,7 +120,7 @@ E4 — Frontend wallet context (parallel):
 - Wire `SolanaWalletProvider` into app root alongside existing `WagmiProvider`, gated by chain selection
 - Test: connect Phantom on devnet, display address, disconnect
 
-**Deliverable:** User API and General API accept `solana` chain and return correct responses. NFT indexer project scaffolded with instruction decoders. Frontend connects to Solana wallets.
+**Deliverable:** User API accepts `solana` chain. Order book project scaffolded. NFT indexer project scaffolded with instruction decoders. Frontend connects to Solana wallets.
 
 **Dependency:** Day 1 — blockchain-utils package, DB tables, Helius webhooks
 
@@ -278,14 +290,12 @@ E4 — Frontend lock handler + trading UI:
 
 E1 — API endpoint verification:
 - Verify all LP Bonds API endpoints return correct Solana data: `/v1/nfts` (list Solana LP bonds), `/v1/collections` (Solana collections), `/v1/portfolio` (owned Solana bonds), `/v1/nft/:mint` (single bond details)
-- Verify General API endpoints work for Solana: `/nfts/collection/:address`, `/nfts/stats`, `/orders/*` (proxied to Solana order-book)
 - Fix any serialization issues (address format, ID format, decimal handling)
 - Document all API changes in an internal API changelog
 
-E2 — Order book → General API wiring:
-- Update General API order proxy: `POST /orders/listing/create` → route to Solana order-book `POST /v1/create` when `chain === 'solana'`
-- Same for `/orders/listing/cancel`, `/orders/offer/create`, `/orders/offer/cancel`
-- Verify order creation flow: frontend → General API → Solana order-book → SolanaOrders DB → query returns order
+E2 — Order book direct access wiring:
+- Expose Solana order-book as standalone API (frontend calls directly, bypassing General API)
+- Verify order creation flow: frontend → Solana order-book → SolanaOrders DB → query returns order
 - Add validation: Solana orders must have base58 addresses and Ed25519 signatures
 
 E3 — Indexer tuning (parallel):
@@ -348,15 +358,15 @@ E4 — Frontend evolution + redemption + polish:
 
 ---
 
-## DAY 8: Launchpad Frontend + Backend Hardening
+## DAY 8: Backend Hardening + Frontend Polish
 
-**Objective:** Start the Solana launchpad frontend and harden all backend services for production
+**Objective:** Harden all backend services for production and polish frontend
 
 **Tasks:**
 
 E1 — Backend service hardening:
 - Add request validation middleware to all API endpoints (input sanitization, address format checks per chain)
-- Add rate limiting to User API and General API Solana endpoints (prevent abuse during launch)
+- Add rate limiting to User API and LP Bonds API Solana endpoints (prevent abuse during launch)
 - Verify all database queries use indexes on Solana tables (add indexes: `SolanaNftTokens.owner`, `SolanaOrders.maker`, `SolanaTransactionVolume.tokenAddress`)
 - Add structured logging to all Solana-specific code paths (log chain, program ID, pubkeys, latency)
 - Verify error responses are consistent across EVM and Solana paths
@@ -375,25 +385,24 @@ E3 — Indexer hardening (parallel):
 - Verify backfill logic handles edge cases (reorgs on Solana are rare but possible — handle missing slots gracefully)
 - Add metrics endpoints to all indexers: `/metrics` returning JSON with records_processed, latest_slot, slot_lag, errors
 
-E4 — Launchpad Frontend:
-- Create new React app (or new route within lp-bonds-webapp) for Solana launchpad
-- Implement wallet connection using `@solana/wallet-adapter-react` (share with lp-bonds-webapp if same app)
-- Build `CreateCollection` page: form for collection name, symbol, description, image upload, royalty %, max supply
-- Integrate Metaplex SDK (`@metaplex-foundation/js`) for collection NFT creation
-- Build phase configuration UI: presale start/end, public sale start/end, price per mint (SOL), max per wallet, whitelist upload (merkle tree generation)
-- Wire up to Launchpad Anchor program: `create_collection` instruction, `configure_phases` instruction
+E4 — Frontend hardening + polish:
+- Add loading states for all Solana operations (transaction submission → confirmation)
+- Add error toasts with human-readable messages (translate Solana program errors to user-friendly text)
+- Optimize bundle size: tree-shake unused Solana dependencies
+- Test on mobile browsers (responsive design verification)
+- Verify Solana wallet popup behavior on Chrome, Firefox, Safari
 
-**Deliverable:** Backend services hardened with validation, rate limiting, logging, and error handling. Launchpad frontend has collection creation and phase configuration.
+**Deliverable:** Backend services hardened with validation, rate limiting, logging, and error handling. Frontend polished with proper error handling and loading states.
 
 **Dependency:** Day 7 — all core features complete, allowing focus on hardening
 
-**Risk:** Launchpad frontend depends on the Launchpad Anchor program IDL being stable. If program changes are still happening, build against a mock/interface. Metaplex SDK version must match the on-chain Metaplex program version — verify compatibility.
+**Risk:** Performance and UX issues may surface during hardening. Allocate time for debugging.
 
 ---
 
-## DAY 9: Launchpad Frontend Completion + Integration Testing Start
+## DAY 9: Integration Testing Start
 
-**Objective:** Complete launchpad frontend and begin systematic integration testing
+**Objective:** Begin systematic integration testing
 
 **Tasks:**
 
@@ -416,16 +425,14 @@ E3 — Indexer integration testing (parallel):
 - Test indexer recovery: stop indexer → create 10 transactions → restart → verify backfill catches up
 - Test webhook retry behavior: return 500 from webhook handler → verify Helius retries → accept on retry → verify no duplicates
 
-E4 — Launchpad Frontend completion:
-- Build `MintPage`: connect wallet → check whitelist eligibility → show price and supply remaining → mint button → submit `mint_nft` instruction → confirm → show minted NFT
-- Build `RefundPage`: show owned NFTs from collection → select NFT → refund button → submit `refund` instruction → confirm → show SOL returned
-- Build `CollectionDashboard`: display minted count, remaining supply, total revenue, holder count (from indexer data)
-- Style all pages with MUI to match existing lp-bonds-webapp design language
-- Test on devnet: create collection → configure phases → mint NFT → refund NFT
+E4 — Frontend integration testing:
+- Test complete user journey: connect Phantom → select Solana devnet → create bond → view in portfolio → list for sale → accept offer → evolve → redeem
+- Test chain switching: complete actions on EVM → switch to Solana → complete actions → switch back → verify no state corruption
+- Fix any frontend bugs found during integration testing
 
-**Deliverable:** Launchpad frontend fully functional on devnet. Integration test suite covering full LP bond lifecycle. Indexer pipeline verified end-to-end.
+**Deliverable:** Integration test suite covering full LP bond lifecycle. Indexer pipeline verified end-to-end.
 
-**Dependency:** Day 8 — backend hardened, launchpad collection creation UI
+**Dependency:** Day 8 — backend hardened, frontend polished
 
 **Risk:** Integration tests may reveal data format mismatches between services (e.g., API returns amount as string but frontend expects number). Allocate debugging time. If integration tests take longer than expected, deprioritize launchpad dashboard polish.
 
@@ -443,8 +450,7 @@ E1 + E4 — End-to-end testing (frontend-driven):
 - Test 3: Second wallet creates offer → accept offer → verify trade completes → verify volume indexed
 - Test 4: Evolve bond from L1 to L2 → verify evolution UI works → verify indexer updates
 - Test 5: Redeem bond after lock expiry → verify redemption UI → verify bond marked redeemed
-- Test 6: Launchpad: create collection → mint NFT → view in portfolio → refund → verify SOL returned
-- Test 7: Chain switching: complete actions on EVM (Sepolia) → switch to Solana → complete actions → switch back → verify no state corruption
+- Test 6: Chain switching: complete actions on EVM (Sepolia) → switch to Solana → complete actions → switch back → verify no state corruption
 - Test 8: Error handling: attempt operations with insufficient funds, expired orders, wrong wallet — verify graceful errors
 
 E2 + E3 — Bug fixing (parallel, as tests reveal issues):
@@ -460,7 +466,7 @@ All — Bug triage:
 - P1 (degrades experience): fix today if possible, otherwise Day 11
 - P2 (cosmetic): defer to Day 12+
 
-**Deliverable:** All 8 E2E test scenarios passing. All P0 bugs fixed. P1 bug list documented.
+**Deliverable:** All 7 E2E test scenarios passing. All P0 bugs fixed. P1 bug list documented.
 
 **Dependency:** Days 1–9 — all services deployed and functional
 
@@ -542,7 +548,6 @@ E3 — Staging deployment (infrastructure):
 
 E4 — Staging deployment (frontend):
 - Deploy lp-bonds-webapp to staging URL with Solana support
-- Deploy launchpad-webapp (or launchpad routes) to staging
 - Configure frontend to use staging API endpoints
 - Verify wallet connection works on staging URL
 
@@ -586,7 +591,6 @@ Midday — Indexer production deployment:
 
 Afternoon — Frontend production deployment:
 - Deploy lp-bonds-webapp to production with Solana wallet support enabled
-- Deploy launchpad-webapp to production
 - Configure production API endpoints in frontend config
 - Verify wallet connection works on production URL
 - Verify chain selector shows Solana as an option
@@ -687,16 +691,16 @@ DAY 14: Final validation + Go-live ───────────────
 | Day | E1 (Backend Senior) | E2 (Backend) | E3 (Indexer) | E4 (Frontend) |
 |-----|---------------------|-------------|-------------|---------------|
 | 1 | blockchain-utils pkg | DB migrations | Helius + indexer infra | Frontend deps + wallet provider |
-| 2 | User API Solana | General API Solana | NFT indexer scaffold + decoders | SolanaWalletContext + ChainSelector |
+| 2 | User API Solana (minimal) | Order Book scaffold | NFT indexer scaffold + decoders | SolanaWalletContext + ChainSelector |
 | 3 | LP Bonds ILockerService | Order Book create/cancel | NFT indexer processors | Solana tx builders (LP Bonds) |
 | 4 | LP Bonds completion + Rewards | Order Book queries + expiry | NFT indexer finish + backfill | Position info fetcher + balances |
 | 5 | Order Book integration tests | Volume Indexer | Metadata Indexer refactor | Lock handlers + CreateLPBonds UI |
-| 6 | API endpoint verification | Order Book → General API | Indexer tuning + DLQ | Portfolio + trading UI |
+| 6 | API endpoint verification | Order Book direct access | Indexer tuning + DLQ | Portfolio + trading UI |
 | 7 | Backend bug fixes | Order Book matching | Metadata enrichment | Evolution + redemption + polish |
-| 8 | Backend hardening | Order Book hardening | Indexer hardening | Launchpad frontend (create + config) |
-| 9 | Integration test suite | Integration test suite | Indexer integration tests | Launchpad frontend (mint + refund) |
+| 8 | Backend hardening | Order Book hardening | Indexer hardening | Frontend hardening + polish |
+| 9 | Integration test suite | Integration test suite | Indexer integration tests | Frontend integration tests |
 | 10 | E2E testing + bug fixes | E2E testing + bug fixes | E2E testing + bug fixes | E2E testing + bug fixes |
-| 11 | P1 bug fixes | P1 bug fixes | Monitoring + alerting | Frontend polish + performance |
+| 11 | P1 bug fixes | P1 bug fixes | Monitoring + alerting | Frontend performance |
 | 12 | Staging deploy (backend) | Staging deploy (order book) | Staging deploy (indexers) | Staging deploy (frontend) |
 | 13 | Prod deploy (APIs) | Prod deploy (order book) | Prod deploy (indexers) | Prod deploy (frontend) |
 | 14 | Final validation | Documentation | Documentation | Go-live + monitoring |
@@ -722,10 +726,9 @@ If the team falls behind, cut in this order (lowest impact first):
 
 | Priority | Cut | Impact | Save |
 |----------|-----|--------|------|
-| 1 | Launchpad frontend polish (dashboard, analytics) | Low — core mint/refund still works | 1 day |
-| 2 | Metadata indexer Solana support | Medium — NFTs show without images/metadata temporarily | 1 day |
-| 3 | Volume indexer | Medium — marketplace works but no volume stats | 1 day |
-| 4 | Evolution UI | Medium — bonds can still be evolved via CLI/SDK | 0.5 day |
-| 5 | Launchpad frontend entirely | High — launch without Solana launchpad, add later | 2 days |
+| 1 | Metadata indexer Solana support | Medium — NFTs show without images/metadata temporarily | 1 day |
+| 2 | Volume indexer | Medium — marketplace works but no volume stats | 1 day |
+| 3 | Evolution UI | Medium — bonds can still be evolved via CLI/SDK | 0.5 day |
+| 4 | Trading UI | Medium-High — bonds can still be created and viewed | 1 day |
 
-**Minimum viable launch (saves 5.5 days):** LP bonds creation + trading + redemption. No launchpad, no volume stats, no metadata enrichment, no evolution UI. These are added in a fast-follow sprint.
+**Minimum viable launch (saves 3.5 days):** LP bonds creation + portfolio view + redemption. No volume stats, no metadata enrichment, no evolution UI, no trading UI. These are added in a fast-follow sprint.
