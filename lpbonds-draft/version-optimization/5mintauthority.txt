@@ -1,0 +1,30 @@
+$ cd /Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts && npx ts-node --project tsconfig.scripts.json scripts/transfer-mint-authority.ts 2>&1
+======================================================================
+TRANSFER MINT AUTHORITY TO LAYER TOKEN AUTHORITY PDA
+======================================================================
+
+Admin:                     FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+Evolution Program:         H7ymeEN673X7kKSYXUUoeByZVspALeHbLHzQQFmNVy43
+Layer Token Authority PDA: EPgW2uFKqzyFMszSFRqWZSqp36J9tb3gybEiDvKQNonf
+
+--- Level 2: Ci3iuaCJfQAapWHJkfycuTc67SCEZYfKTS8fxjKCP5tB ---
+  Current mint authority: FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+  Transferred to PDA: HZjjCsQiNGm7kva5mb5WVE9LurJxoqjqEV5XUXzDBGYHtn7r4smNCKqNMEJ1r2YGZv2hDzchTVhfK4ErsK5Hccr
+  Explorer: https://explorer.solana.com/tx/HZjjCsQiNGm7kva5mb5WVE9LurJxoqjqEV5XUXzDBGYHtn7r4smNCKqNMEJ1r2YGZv2hDzchTVhfK4ErsK5Hccr?cluster=devnet
+  Verified new authority: EPgW2uFKqzyFMszSFRqWZSqp36J9tb3gybEiDvKQNonf
+
+--- Level 3: 9b7gAMUxGdRwkEk32KtayLXAhwqib3yaTzLdvtMfvXbp ---
+  Current mint authority: FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+  Transferred to PDA: 4C21Xfwf5uFJkK5oYpeE11eKJDpAJqYPKHCkjXvU8fMUNEBGNXD5YHeQc26sSLUHgmqtEdm2aBkTXnVHeVU7FyYn
+  Explorer: https://explorer.solana.com/tx/4C21Xfwf5uFJkK5oYpeE11eKJDpAJqYPKHCkjXvU8fMUNEBGNXD5YHeQc26sSLUHgmqtEdm2aBkTXnVHeVU7FyYn?cluster=devnet
+  Verified new authority: EPgW2uFKqzyFMszSFRqWZSqp36J9tb3gybEiDvKQNonf
+
+--- Level 4: 9Zs8kUpicKNZNosFwMawxnVqFZxBfZz8dh2zLu2wahnu ---
+  Current mint authority: FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+  Transferred to PDA: 5EudEF5jzba1xrnzpuNzMmLk3TAjPrZUCQc5x5UBq8WVfEppMCBJXq45yyFo1XevEtBpjr1SqtLzXJ6JkAJ9GJZs
+  Explorer: https://explorer.solana.com/tx/5EudEF5jzba1xrnzpuNzMmLk3TAjPrZUCQc5x5UBq8WVfEppMCBJXq45yyFo1XevEtBpjr1SqtLzXJ6JkAJ9GJZs?cluster=devnet
+  Verified new authority: EPgW2uFKqzyFMszSFRqWZSqp36J9tb3gybEiDvKQNonf
+
+======================================================================
+MINT AUTHORITY TRANSFER COMPLETE
+======================================================================

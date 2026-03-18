@@ -1,0 +1,71 @@
+========================================================================
+LP BONDS PROTOCOL - FRESH DEPLOYMENT
+========================================================================
+
+Wallet:  /Users/mansitibrewal/.config/solana/id.json
+Cluster: https://api.devnet.solana.com
+
+Admin:   FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+Balance: 9.421651 SOL
+
+--- Step 1: Generate new program keypairs ---
+Wrote new keypair to target/deploy/lp_bonds-keypair.json
+Wrote new keypair to target/deploy/lp_bonds_evolution-keypair.json
+New LP Bonds Program ID:  7oFXPveRzDZUHSTxaRquLDn8Z7U3CZYLonyET13Sqaxe
+New Evolution Program ID: H7ymeEN673X7kKSYXUUoeByZVspALeHbLHzQQFmNVy43
+
+--- Step 2: Update program IDs in source ---
+Updated declare_id! and Anchor.toml
+
+--- Step 3: Build programs ---
+   Compiling lp-bonds-evolution v0.1.0 (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/programs/lp-bonds-evolution)
+    Finished `release` profile [optimized] target(s) in 2.80s
+   Compiling lp-bonds-evolution v0.1.0 (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/programs/lp-bonds-evolution)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.58s
+   Compiling lp-bonds v0.1.0 (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/programs/lp-bonds)
+    Finished `release` profile [optimized] target(s) in 1.75s
+   Compiling lp-bonds v0.1.0 (/Users/mansitibrewal/chronicles/energi/solana-lp-bonds-contracts/programs/lp-bonds)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.77s
+
+Build successful.
+  lp_bonds.so:             488456 bytes
+  lp_bonds_evolution.so:   543056 bytes
+
+--- Step 4: Deploy programs ---
+Deploying lp_bonds...
+Program Id: 7oFXPveRzDZUHSTxaRquLDn8Z7U3CZYLonyET13Sqaxe
+
+Signature: 5wGKMbxSTq6ewLgJjpXbuDf2mqJwPeAYx9WnxUP3GDpNuVTNmazdJthhtN5hcrN6uMuoQMYV7AqL76jTvM4gZTjE
+
+
+Deploying lp_bonds_evolution...
+Program Id: H7ymeEN673X7kKSYXUUoeByZVspALeHbLHzQQFmNVy43
+
+Signature: mUiQhGouL7oeEwUSwUq2nVdn6KNUxUE6nuoiguZ1cV3gdewKw4wzfJ1Ds7kJtND3nAHeCxqfNc5VA7tT49NADuH
+
+
+--- Step 5: Verify deployment ---
+
+Program Id: 7oFXPveRzDZUHSTxaRquLDn8Z7U3CZYLonyET13Sqaxe
+Owner: BPFLoaderUpgradeab1e11111111111111111111111
+ProgramData Address: BqjXMSDXzo3cpbyjJW43SVaS5PoVTE4RXp44qeLv3WSS
+Authority: FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+
+
+Program Id: H7ymeEN673X7kKSYXUUoeByZVspALeHbLHzQQFmNVy43
+Owner: BPFLoaderUpgradeab1e11111111111111111111111
+ProgramData Address: EKQEA6F428ZRWkXSwvN31f3m7rSo3MEr3Jq4P9yPAhr1
+Authority: FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+
+========================================================================
+DEPLOYMENT COMPLETE
+========================================================================
+
+LP Bonds Program:   7oFXPveRzDZUHSTxaRquLDn8Z7U3CZYLonyET13Sqaxe
+Evolution Program:   H7ymeEN673X7kKSYXUUoeByZVspALeHbLHzQQFmNVy43
+Deploy Authority:    FSyL13FTp3Yrgdo8VWpoNtpL8FS5FcSGL3tdNp1sjw2t
+
+Next step: Run the admin configuration script:
+  npx ts-node scripts/admin-configure.ts
+
+========================================================================

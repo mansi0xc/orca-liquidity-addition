@@ -1,0 +1,23 @@
+[package]
+name = "lp-bonds-evolution"
+version = "0.1.0"
+description = "LP Bonds Evolution Program - Level 2-4 Bond Upgrades"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "lp_bonds_evolution"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
+[dependencies]
+anchor-lang = { version = "0.32.1", features = ["init-if-needed"] }
+anchor-spl = { version = "0.32.1", features = ["metadata", "token", "associated_token"] }
+solana-instruction = "3.2.0"
+solana-pubkey = "2.2"
