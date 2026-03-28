@@ -1,0 +1,31 @@
+$ yarn test:generate-wallet
+yarn run v1.22.22
+$ npx ts-node --project tsconfig.scripts.json scripts/user-test.ts generate
+npm warn Unknown env config "version-git-tag". This will stop working in the next major version of npm.
+npm warn Unknown env config "argv". This will stop working in the next major version of npm.
+npm warn Unknown env config "version-commit-hooks". This will stop working in the next major version of npm.
+npm warn Unknown env config "version-git-message". This will stop working in the next major version of npm.
+npm warn Unknown env config "version-tag-prefix". This will stop working in the next major version of npm.
+======================================================================
+LP BONDS - USER TEST WALLET GENERATION
+======================================================================
+
+New test wallet generated:
+  Address: C4zcbhFv2sHWnx8oatKzwXuMU9nAJWyunnDogoxfJtpn
+  Path:    ./keys/test-user-wallet.json
+  Explorer: https://explorer.solana.com/address/C4zcbhFv2sHWnx8oatKzwXuMU9nAJWyunnDogoxfJtpn?cluster=devnet
+
+======================================================================
+PLEASE FUND THIS WALLET BEFORE RUNNING THE TEST
+======================================================================
+
+Required funding:
+  - At least 2 SOL for transaction fees + liquidity deposits
+  - Token B for Level 1 whirlpool (if two-sided range)
+  - Token A for evolution levels 2-4
+  - Layer tokens (= whirlpool token_b) for evolution levels 2-4
+
+After funding, run:
+  npx ts-node --project tsconfig.scripts.json scripts/user-test.ts run
+======================================================================
+✨  Done in 1.61s.

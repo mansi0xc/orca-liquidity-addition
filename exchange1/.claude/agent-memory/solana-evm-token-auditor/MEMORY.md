@@ -1,0 +1,1 @@
+- [LP Bonds Audit Findings](project_lp_bonds_audit.md): Key findings from 2026-03-23 security audit of lp-bonds and lp-bonds-evolution programs, EVM comparison, and cross-program issues.

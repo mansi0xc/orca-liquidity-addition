@@ -1,0 +1,40 @@
+{
+  "name": "lp-bonds-contracts",
+  "version": "0.1.0",
+  "description": "LP Bonds Protocol - Whirlpool Position Custody and Bond NFT Minting",
+  "license": "Apache-2.0",
+  "scripts": {
+    "lint:fix": "prettier */*.js \"*/**/*{.js,.ts}\" -w",
+    "lint": "prettier */*.js \"*/**/*{.js,.ts}\" --check",
+    "test": "anchor test",
+    "test:oracle": "anchor test -- --grep \"Oracle Verification\"",
+    "test:evolution": "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/lp-bonds-evolution.ts",
+    "test:locker": "anchor test -- --grep \"LP Bonds Protocol\"",
+    "build": "anchor build",
+    "configure:bonds": "npx ts-node --project tsconfig.scripts.json scripts/configure-bonds.ts",
+    "admin:configure": "npx ts-node --project tsconfig.scripts.json scripts/admin-configure.ts",
+    "admin:reconfigure": "npx ts-node --project tsconfig.scripts.json scripts/reconfigure-levels.ts",
+    "admin:transfer-mint-auth": "npx ts-node --project tsconfig.scripts.json scripts/transfer-mint-authority.ts",
+    "test:generate-wallet": "npx ts-node --project tsconfig.scripts.json scripts/user-test.ts generate",
+    "test:user-flow": "npx ts-node --project tsconfig.scripts.json scripts/user-test.ts run",
+    "deploy:fresh": "bash scripts/deploy-fresh.sh"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.32.1",
+    "@metaplex-foundation/mpl-token-metadata": "^3.1.0",
+    "@orca-so/whirlpools-sdk": "^0.11.0",
+    "@solana/spl-token": "^0.3.9",
+    "@solana/web3.js": "^1.87.6",
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/bn.js": "^5.1.5",
+    "@types/chai": "^4.3.11",
+    "@types/mocha": "^10.0.6",
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0",
+    "prettier": "^3.1.1",
+    "ts-mocha": "^10.0.0",
+    "typescript": "^5.3.3"
+  }
+}
