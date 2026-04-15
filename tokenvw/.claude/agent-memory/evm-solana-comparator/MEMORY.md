@@ -1,0 +1,1 @@
+- [Launchpad C-variant insolvency](project_launchpad_insolvency.md) -- refund_price uses pre-fee amount, vault holds post-fee; residual deficit in C variants

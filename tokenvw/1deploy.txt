@@ -1,0 +1,10 @@
+$ anchor deploy
+Deploying cluster: https://api.devnet.solana.com
+Upgrade authority: /Users/mansitibrewal/.config/solana/id.json
+Deploying program "lp_token"...
+Program path: /Users/mansitibrewal/chronicles/egmi-solana/solana-token/target/deploy/lp_token.so...
+Program Id: xRT4RPC91jc2qcc6fkiGacTRFWeFzZuJcqx1T7fQsBw
+
+Signature: 2ESwqENszEhedGXGGvjCxaWfKP9GeraTB6KKsm6qf3hoZFR4t9T7TXepFrF2d6WdhiJPe8XSqRreQPcGhZSJMD7f
+
+Deploy success

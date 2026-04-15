@@ -1,0 +1,29 @@
+[package]
+name = "lp_token"
+version = "0.1.0"
+description = "LP Token — Solana migration of EVM LPToken (Energi Core)"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "lp_token"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+custom-heap = []
+custom-panic = []
+anchor-debug = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
+[lints.rust]
+# Anchor 0.31.1 internally uses deprecated AccountInfo::realloc in #[program] macro.
+# Suppress until upstream fixes this in a future Anchor release.
+deprecated = "allow"
+
+[dependencies]
+anchor-lang = { version = "0.31.1", features = ["init-if-needed"] }
+anchor-spl = "0.31.1"
