@@ -1,0 +1,28 @@
+{
+  "name": "lp-token-solana",
+  "version": "0.1.0",
+  "description": "LP Token — Solana migration of EVM LPToken (Energi Core)",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf target .anchor",
+    "build": "anchor build -p lp_token",
+    "test": "anchor test",
+    "test:only": "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
+  },
+  "devDependencies": {
+    "@coral-xyz/anchor": "^0.31.1",
+    "@solana/spl-token": "^0.4.8",
+    "@solana/web3.js": "~1.95.8",
+    "@types/chai": "^4.3.11",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "~18.18.14",
+    "chai": "^4.4.1",
+    "mocha": "^10.2.0",
+    "ts-mocha": "^10.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
